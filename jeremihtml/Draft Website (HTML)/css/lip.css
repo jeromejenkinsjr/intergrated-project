@@ -1,0 +1,59 @@
+.latestInPiano {
+	background-color: #303030;
+	color: #e4e4e4;
+}
+
+.latestInPiano h1 {
+	font-family: "Lato";
+    font-size: 48px;
+}
+
+.latestInPiano h2 {
+	font-family: "Playfair Display";
+	font-weight: 300;
+	font-size: 28px;
+	line-height: 32px;
+	margin-bottom: 5px;
+}
+
+.latestInPiano .category {
+	width: 100px;
+	background-color: #7C0D3B;
+	font-family: "Lato";
+	margin-bottom: 8px;
+}
+
+.latestInPiano .category h4 {
+	position: relative;
+	left: 25px;
+}
+
+.latestInPiano .lineheadthick {
+    border-top: 2px solid;
+}
+
+.latestInPiano .authoranddate {
+	display: flex;
+	justify-content: space-between;
+}
+
+.latestInPiano .authoranddate p {
+    margin-top: 0px;
+    font-family: "Libre Franklin";
+    font-size: 12px;
+    font-weight: 200;
+}
+
+.latestInPiano p {
+    margin-top: 8px;
+    font-family: "Libre Franklin";
+    font-size: 11px;
+    font-weight: 200;
+}
+
+.latestInPiano .panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
+}

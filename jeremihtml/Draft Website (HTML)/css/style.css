@@ -1,0 +1,78 @@
+.header {
+	background-color: #7C0D3B;
+	color: white;
+}
+
+.header h1 {
+	font-family: 'Playfair Display';
+	font-size: 40px;
+}
+
+.header .title {
+	display: flex;
+}
+
+.header .titandlin {
+	display:block;
+	margin-right: 10px;
+}
+
+.header .logo img {
+	width: 50px;
+	height: 55px;
+	position: relative;
+	top: 15px;
+}
+
+.header hr.thin1 {
+	width: 380px;
+	margin-left: 0px;
+	position: relative;
+	bottom: 10px;
+}
+
+.header hr.thick1 {
+	width: 380px;
+	margin-left: 0px;
+	border-top: 2px solid;
+	position: relative;
+	bottom: 15px;
+}
+
+.panel .img {
+	min-height: 211px;
+	background-image: url(../images/spyballoon.png);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position-y: center;
+}
+
+.articleBlockHead .authoranddate {
+	display: flex;
+	justify-content: space-between;
+	font-family: "Libre Franklin";
+    font-size: 12px;
+}
+
+.articleBlockHead .lineheadthick {
+	border-top: 2px solid;
+}
+
+.articleBlockHead h1 {
+	font-family: 'Playfair Display';
+	font-size: 38px;
+	line-height: 45px;
+}
+
+.latestInPiano .lipTitleSect h2 {
+	font-family: "Lato";
+	font-weight: 900;
+	position: relative;
+	top: 55px;
+	left: 20px;
+}
+
+.latestInPiano .container {
+	padding-bottom: 0px;
+	padding-top: 30px;
+}
