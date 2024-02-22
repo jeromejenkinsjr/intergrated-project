@@ -37,6 +37,7 @@
     line-height: 14px;
     font-size: 6px;
     max-height: 230px;
+    max-width: 230px;
 }
 
 .horArticle .container {

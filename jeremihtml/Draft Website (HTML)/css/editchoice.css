@@ -5,6 +5,7 @@
 
 .news-HorArt {
     display: flex;
+
 }
 
 .horArticle {
@@ -30,3 +31,27 @@
 	margin-bottom: 5px;
 }
 
+.editorsChoice .category {
+	width: 100px;
+	background-color: #7C0D3B;
+	font-family: "Lato";
+	margin-bottom: 8px;
+}
+
+.editorsChoice .category h4 {
+	position: relative;
+	left: 25px;
+    color: white;
+}
+
+.editorsChoice .horArticle p {
+    margin-top: 8px;
+    font-family: "Libre Franklin";
+    font-size: 11px;
+    font-weight: 200;
+}
+
+.editorsChoice .authoranddate {
+	display: flex;
+	justify-content: space-between;
+}
