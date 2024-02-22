@@ -31,13 +31,13 @@
     margin: 0 5px;
   }
 
-.images {
+.carousel .images {
   position: relative;
   display: inline-block;
   height: 255.28px;
 }
 
-.images img {
+.carousel .images img {
   width: 100%;
   height: 100%;
   object-fit: cover; /* Ensure the image covers the entire container */
@@ -64,17 +64,19 @@
       background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.8));
   }
 
-  .carousel .category {
-    width: 155px;
-	background-color: #7C0D3B;
-	font-family: "Lato";
-	margin-bottom: 8px;
-  color: white;
-  }
 
+  .carousel .category {
+    font-family: "Lato";
+    margin-bottom: 8px;
+    color: white;
+  }
+  
   .carousel .category h4 {
+    padding-left: 15px;
+    padding-right: 15px;
     position: relative;
-    left: 25px;
+    background-color: #7C0D3B;
+    display: inline-block; /* Add this line */
   }
 
   .carousel h2 {

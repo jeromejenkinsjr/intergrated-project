@@ -63,28 +63,3 @@
 	font-size: 38px;
 	line-height: 45px;
 }
-
-.latestInPiano .lipTitleSect h2 {
-	font-family: "Lato";
-	font-weight: 900;
-	position: relative;
-	top: 55px;
-	left: 20px;
-}
-
-.latestInPiano .container {
-	padding-bottom: 0px;
-	padding-top: 30px;
-}
-
-.lipTitleSect .lineheadthin {
-	width: 950px;
-}
-
-.lipTitleSect .lineheadthick {
-	width: 950px;
-}
-
-.lipTitleSect h2 {
-	margin-left: 300px;
-}

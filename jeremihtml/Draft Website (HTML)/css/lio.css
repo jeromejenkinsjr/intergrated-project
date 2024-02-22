@@ -1,15 +1,15 @@
-.latestInPiano {
+.latestInOrchestra {
 	background-color: #303030;
 	color: #e4e4e4;
 	padding-bottom: 35px;
 }
 
-.latestInPiano h1 {
+.latestInOrchestra h1 {
 	font-family: "Lato";
     font-size: 48px;
 }
 
-.latestInPiano h2 {
+.latestInOrchestra h2 {
 	font-family: "Playfair Display";
 	font-weight: 300;
 	font-size: 28px;
@@ -17,44 +17,45 @@
 	margin-bottom: 5px;
 }
 
-.latestInPiano .category {
-    font-family: "Lato";
-    margin-bottom: 8px;
-    color: white;
-  }
-  
-  .latestInPiano .category h4 {
-    padding-left: 15px;
-    padding-right: 15px;
-    position: relative;
-    background-color: #7C0D3B;
-    display: inline-block; /* Add this line */
-  }
+.latestInOrchestra .category {
+	
+	
+	font-family: "Lato";
+	margin-bottom: 8px;
+}
 
-.latestInPiano .lineheadthick {
+.latestInOrchestra .category h4 {
+	padding-left: 15px;
+	padding-right: 15px;
+	position: relative;
+	background-color: #7C0D3B;
+	display: inline-block; /* Add this line */
+}
+
+.latestInOrchestra .lineheadthick {
     border-top: 2px solid;
 }
 
-.latestInPiano .authoranddate {
+.latestInOrchestra .authoranddate {
 	display: flex;
 	justify-content: space-between;
 }
 
-.latestInPiano .authoranddate p {
+.latestInOrchestra .authoranddate p {
     margin-top: 0px;
     font-family: "Libre Franklin";
     font-size: 12px;
     font-weight: 200;
 }
 
-.latestInPiano p {
+.latestInOrchestra p {
     margin-top: 8px;
     font-family: "Libre Franklin";
     font-size: 11px;
     font-weight: 200;
 }
 
-.latestInPiano .panel{
+.latestInOrchestra .panel{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -72,7 +73,7 @@ li {
 	margin-bottom: 20px;
 }
 
-.latestInPiano .lipTitleSect h2 {
+.latestInOrchestra .lioTitleSect h2 {
 	font-family: "Lato";
 	font-weight: 900;
 	position: relative;
@@ -80,31 +81,34 @@ li {
 	left: 20px;
 }
 
-.latestInPiano .container {
+.latestInOrchestra .container {
 	padding-bottom: 0px;
 	padding-top: 30px;
 }
 
-.lipTitleSect .lineheadthin {
+.latestInOrchestra .lineheadthin {
 	width: 950px;
 }
 
-.lipTitleSect .lineheadthick {
+.lioTitleSect .lineheadthick {
 	width: 950px;
 }
 
-.lipTitleSect h2 {
+
+
+.lioTitleSect h2 {
 	margin-left: 300px;
 }
 
-.latestInPiano .images {
+
+.latestInOrchestra .images {
 	position: relative;
   display: inline-block;
   height: 255.28px;
   width: 297.5px;
   }
 
-  .latestInPiano .images img {
+  .latestInOrchestra .images img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover; /* Ensure the image covers the entire container */
