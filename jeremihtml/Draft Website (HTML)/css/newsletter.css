@@ -36,6 +36,11 @@
     font-family: "Libre Franklin";
     line-height: 14px;
     font-size: 6px;
+    max-height: 230px;
+}
+
+.horArticle .container {
+    padding-top: 0px;
 }
 
 .privTxt {
