@@ -1,6 +1,7 @@
 .latestInPiano {
 	background-color: #303030;
 	color: #e4e4e4;
+	padding-bottom: 35px;
 }
 
 .latestInPiano h1 {
@@ -56,4 +57,15 @@
     flex-direction: column;
     justify-content: space-between;
     
+}
+
+li {
+	font-family: "Playfair Display";
+	font-weight: 400;
+	font-size: 20px;
+}
+
+.topstories p {
+	font-family: "Libre Franklin";
+	margin-bottom: 20px;
 }

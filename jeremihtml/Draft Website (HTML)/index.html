@@ -12,7 +12,15 @@
 	<link rel="stylesheet" href="CSS/style.css" />
 	<link rel="stylesheet" href="CSS/lip.css" />
 	<link rel="stylesheet" href="CSS/carousel.css" />
-	<title>The Grapevine</title>
+	<link rel="stylesheet" href="CSS/newsletter.css" />
+	<link rel="stylesheet" href="CSS/editchoice.css" />
+	<title>Maison du Classique</title>
+	<style>
+		/* Custom styles for the unordered list */
+		li {
+		  list-style-type: circle; /* Use filled circles as bullet points */
+		}
+	  </style>
 </head>
 
 <body>
@@ -48,20 +56,44 @@
 				</div>
 				<hr class="lineheadthick">
 			</div>
-			<div class="carousel width-6">
+			<div class="carousel width-3">
 				<div class="carousel__items">
-					<div class="carousel__item">Content #1</div>
-					<div class="carousel__item">Content #2</div>
-					<div class="carousel__item">Content #3</div>
+					<div class="carousel__item">
+						<div class="images">
+							<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
+						<div class="overlayGradient"></div>
+						<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
+						</div>
+					</div>
+					<div class="carousel__item"><div class="images">
+						<img src="images/sanfranopera.jpg" alt="Opera show in San Francisco" />
+					<div class="overlayGradient"></div>
+					<h2 class="overlayText">How Opera Finances Have Slumped in...</h2>
+					</div></div>
+					<div class="carousel__item"><div class="images">
+						<img src="images/joyce-cbouw-2024.jpg" alt="Little girl playing piano" />
+					<div class="overlayGradient"></div>
+					<h2 class="overlayText">All Shall Have Prizes: Joyce Goes Dutch</h2>
+					</div></div>
 				</div>
 				<div class="carousel__nav">
-					<button class="prev"></button>
-					<button class="next"></button>
+					<button class="prev">Prev.</button>
+					<button class="next">Next</button>
 				</div>
 				<script src="js/carousel.js"></script>
+				<div class="smallArticle">
+					<div>
+						<div class="category">
+							<h4>ORCHESTRAS</h4>
+						</div>
+						<h2>Concertmaster Drowned In Shallow End, Inquest Finds</h2>
+					</div>
+					<div>
+					<p>Dominic Hopkins, 57, leader of the Norwich Philharmonic from 2008 to 2016, was swimming at the University of East Anglia on January 27 2022 when he suffered difficulties.
+						He lay in the shallow end of the pool for six and a half minutes before being spotted by three lifeguards, an inquest was told today.</p>
+					</div>
+				</div>
 			</div>
-
-		</div>
 	</section>
 
 	<section class="latestInPiano">
@@ -72,46 +104,47 @@
 					<hr class="lineheadthin">
 					<hr class="lineheadthick">
 				</div>
-				<h2>TOP STORIES</h2>
+				<h2>TOP <i>PIANO</i> HEADLINES:</h2>
 			</div>
 		</div>
 		<div class="container">
-				<div class="panel width-3">
-					<div>
-						<div class="category">
-							<h4>PIANO</h4>
-						</div>
-						<h2>What Kind Of Parents Make Their Kids Play Piano?</h2>
+			<div class="panel width-3">
+				<div>
+					<div class="category">
+						<h4>PIANO</h4>
 					</div>
-	
-					<div>
-						<img src="images/littlegirlpiano.png" alt="Little girl playing piano" />
-						<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he
-							won a MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of
-							‘Speaking Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how
-							he did that.</p>
-						<hr class="lineheadthin">
-						<div class="authoranddate">
-							<p>Norman Lebrecht</p>
-							<p>February 14th, 2024</p>
-						</div>
-						<hr class="lineheadthick">
-					</div>
+					<h2>What Kind Of Parents Make Their Kids Play Piano?</h2>
 				</div>
-				
-				<div class="panel width-3">
-					<div>
-						<div class="category">
-							<h4>PIANO</h4>
-						</div>
-					<h2>The Making Of A Chinese Piano Star</h2>
+				<div>
+					<img src="images/littlegirlpiano.png" alt="Little girl playing piano" />
+					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he
+						won a MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of
+						‘Speaking Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how
+						he did that.</p>
+					<hr class="lineheadthin">
+					<div class="authoranddate">
+						<p>Norman Lebrecht</p>
+						<p>February 14th, 2024</p>
 					</div>
-				
+					<hr class="lineheadthick">
+				</div>
+			</div>
+			<div class="panel width-3">
+				<div>
+					<div class="category">
+						<h4>PIANO</h4>
+					</div>
+					<h2>The Making Of A Chinese Piano Star</h2>
+				</div>
+
 				<div>
 					<img src="images/chinesestarwoman.png" alt="Little girl playing piano" />
-					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he won a
-						MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of ‘Speaking
-						Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how he did that.
+					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he
+						won a
+						MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of
+						‘Speaking
+						Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how he did
+						that.
 					</p>
 					<hr class="lineheadthin">
 					<div class="authoranddate">
@@ -121,8 +154,8 @@
 					<hr class="lineheadthick">
 				</div>
 			</div>
-				<div class="panel3 width-3">
-					<div>
+			<div class="panel width-3">
+				<div>
 					<div class="category">
 						<h4>PIANO</h4>
 					</div>
@@ -130,9 +163,12 @@
 				</div>
 				<div>
 					<img src="images/maofujita.png" alt="Mao Fujita playing piano" />
-					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he won a
-						MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of ‘Speaking
-						Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how he did that.
+					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he
+						won a
+						MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of
+						‘Speaking
+						Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how he did
+						that.
 					</p>
 					<hr class="lineheadthin">
 					<div class="authoranddate">
@@ -143,58 +179,62 @@
 				</div>
 
 			</div>
+			<div class="topstories width-3">
+				<ul>
+					<div>
+						<li>EXCLUSIVE: Pletnev's Piano is Stolen on the Road</li>	
+						<p>Norman Lebrecht</p>
+					</div>
+					<div>
+						<li>Louis Lortie Review - Putting Fauré's Serene...</li>	
+						<p>Rian Evans</p>
+					</div>
+					<div>
+						<li>English National Opera musicians call off strike action after agreement reached</li>	
+						<p>Lanre Bakare</p>
+					</div>
+					<div>
+						<li>
+							<b>‘It’s quartet Disney World!’</b> Getting to grips with world’s biggest string quartet festival</li>	
+						<p>Flora Willson</p>
+					</div>
+				  </ul>
+			</div>
 		</div>
 	</section>
-	<!-- Mini Articles -->
-	<!-- <section class="miniArticles">
-			<div class="container">
-				<div class="width-4">
-					<div class="content">
-						<h3><a href="#">SEX, LOVE, AND THE STATE OF ROM-COM</a></h3>
-						<p class="author">
-							BY VINSON CUNNINGHAM, NAOMI FRY, & ALEXANDRA SCHWARTZ
-						</p>
-					</div>
-				</div>
 
-				<div class="width-4">
-					<div class="content">
-						<h3><a href="#">MY FAVOURITE TIMES TO USE INCOGNITO MODE</a></h3>
-						<p class="author">BY JADE ORLANDO</p>
-					</div>
-				</div>
-
-				<div class="width-4">
-					<div class="content">
-						<h3><a href="#">A G.P.S ROUTE FOR MY ANXIETY</a></h3>
-						<p class="author">BY JESSE EISENBERG</p>
-					</div>
-				</div>
-
-				<div class="width-4">
-					<div class="content">
-						<h3>
-							<a href="#">A NATIONAL EXPERIMENT IN REFUGEE RESETTLEMENT</a>
-						</h3>
-						<p class="author">BY GERALDO CADAVA</p>
-					</div>
-				</div>
-
-				<div class="width-4">
-					<div class="content">
-						<h3><a href="#">WHAT'S BEHIND THE CHINESE SPY BALLOON</a></h3>
-						<p class="author">BY ISAAC CHOTINER</p>
-					</div>
-				</div>
-
-				<div class="width-4">
-					<div class="content">
-						<h3><a href="#">IS ARTIFICIAL LIGHT POISONING THE PLANET?</a></h3>
-						<p class="author">BY ADAM GOPNIK</p>
-					</div>
-				</div>
+	<section class="editorsChoice">
+		<div class="container">
+			<div class="panel width-3">
+				<h2>FEATURED VIDEOS</h2>
 			</div>
-		</section> -->
+			<div class="lipTitleSect width-9">
+					<div class="pianoTxtandLine">
+						<h1>EDITOR'S CHOICE</h1>
+						<hr class="lineheadthin">
+						<hr class="lineheadthick">
+					</div>
+					<div class="newsletter width-3">
+						<h2><u>The Digital Daily Newsletter</u></h2>
+						<div class="slogantxt">
+							<p>Where</p>
+							<p><i><b>Music</b></i></p>
+							<p>Meets</p>
+							<p><i><b>Elegance.</b></i></p>
+						</div>
+						<div class="formBox">
+							<form action="#">
+								<div class="form-box">
+									<input type="text" name="EmailAddress" placeholder="Enter your email address   ">
+									<button type="submit">SUBSCRIBE</button>
+								</div>
+							</form>
+						</div>
+						<p>BY PROVIDING YOUR INFORMATION, YOU AGREE TO OUR TERMS OF USE AND OUR PRIVACY POLICY. WE USE VENDORS THAT MAY ALSO PROCESS YOUR INFORMATION TO HELP PROVIDE OUR SERVICES.
+					</div>
+			</div>
+		</div>
+	</section>
 </body>
 
 </html>

@@ -1,0 +1,40 @@
+
+.form-box input {
+    font-family: "Lato";
+    font-size: 11px;
+    box-sizing: border-box;
+    margin-right: 5px;
+    border-radius: 0px;
+    padding: 7.5px 10px;
+}
+
+.form-box button {
+    background-color: #7C0D3B;
+    color: white;
+    font-family: "Lato";
+    font-weight: bold;
+    width: 50px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.form-box {
+    display: flex;
+    padding:10px;
+    background-color: white;
+}
+
+.slogantxt {
+    padding-left: 10px;
+    font-family: "Playfair Display";
+    font-size: 28px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.newsletter {
+    border: 2px solid;
+    font-family: "Libre Franklin";
+    line-height: 14px;
+    font-size: 6px;
+}

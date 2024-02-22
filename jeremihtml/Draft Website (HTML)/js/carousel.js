@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const items = document.querySelector('.carousel__items');
     let currentIndex = 0;
     let intervalId;
-  
+
     function showSlide(index) {
       items.style.transform = `translateX(-${index * 100}%)`;
     }
@@ -39,4 +39,3 @@ document.addEventListener('DOMContentLoaded', function() {
   
     startAutoScroll(); // Start auto-scroll when page loads
   });
-  
