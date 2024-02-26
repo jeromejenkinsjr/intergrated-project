@@ -85,8 +85,24 @@
 
 .horArticle .lineheadthick {
     border-top: 2px solid;
+    margin-bottom: 0px;
+}
+.horArticle .lineheadthin {
+    margin-bottom: 0px;
 }
 
 .editheader {
     padding-bottom: 0px;
+}
+
+.news-HorArt .nHA2 .container {
+    padding-top: 0px;
+}
+
+.editorsChoice .editTitleSect h2 {
+	font-family: "Lato";
+	font-weight: 900;
+	position: relative;
+	top: 55px;
+	left: 105px;
 }

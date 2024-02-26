@@ -77,8 +77,8 @@ li {
 	font-family: "Lato";
 	font-weight: 900;
 	position: relative;
-	top: 55px;
-	left: 20px;
+	top: 35px;
+	left: 105px;
 }
 
 .latestInOrchestra .container {
@@ -96,9 +96,7 @@ li {
 
 
 
-.lioTitleSect h2 {
-	margin-left: 300px;
-}
+
 
 
 .latestInOrchestra .images {

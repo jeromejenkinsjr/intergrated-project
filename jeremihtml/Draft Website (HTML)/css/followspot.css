@@ -1,12 +1,5 @@
 
-    .slogantxt {
-        padding-left: 10px;
-        font-family: "Playfair Display";
-        font-size: 28px;
-        line-height: 30px;
-    }
-    
-    .followSpotify {
+.followSpotify {
         border: 2px solid;
         font-family: "Libre Franklin";
         line-height: 14px;
@@ -15,15 +8,7 @@
         max-width: 230px;
         position: relative;
         top: 40px;
-    }
-    
-    .privTxt {
-        padding-left: 10px;
-        line-height: 7px;
-        font-weight: bold;
-        padding-bottom: 10px;
-        padding-right: 10px;
-        color: #515151
+        left: 40px;
     }
     
     .followSpotify h2 {
@@ -37,14 +22,18 @@
     .followSpotify img {
         width: 140px;
         height: 140px;
-        border: 2px solid #7C0D3B;
     }
 
     .followSpotify .spotImgandTxt {
         padding-left: 10px;
         display: flex;
-        margin-top: 20px;
+        margin-top: 10px;
     }
+
+    .followSpotify .spotImgandTxt img {
+        border: 2px solid #7C0D3B;
+    }
+
 
     .followSpotify .spotImgandTxt .spotTxt {
         margin-left: 10px;
@@ -65,17 +54,17 @@
 
     .btnandlogo {
         display: flex;
+        justify-content: center;
+    }
+
+
+    .btnandlogo img {
+        height: 30px;
+        width: 30px;
+        margin-top: 5px;
         margin-left: 10px;
     }
 
-    .btnandlogo .button {
-        background-color: #7C0D3B;
-    color: white;
-    font-family: "Lato";
-    font-weight: bold;
-    width: 50px;
-    cursor: pointer;
-    transition: .3s;
-    padding:10px;
-    border: 2px solid black;
+    .btnandlogo img:hover {
+        color: #7C0D3B;
     }

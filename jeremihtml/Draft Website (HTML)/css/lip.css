@@ -77,7 +77,7 @@ li {
 	font-weight: 900;
 	position: relative;
 	top: 55px;
-	left: 20px;
+	left: 105px;
 }
 
 .latestInPiano .container {
@@ -91,10 +91,6 @@ li {
 
 .lipTitleSect .lineheadthick {
 	width: 950px;
-}
-
-.lipTitleSect h2 {
-	margin-left: 300px;
 }
 
 .latestInPiano .images {

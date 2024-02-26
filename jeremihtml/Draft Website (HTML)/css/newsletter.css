@@ -8,16 +8,6 @@
     padding: 7.5px 10px;
 }
 
-.form-box button {
-    background-color: #7C0D3B;
-    color: white;
-    font-family: "Lato";
-    font-weight: bold;
-    width: 50px;
-    cursor: pointer;
-    transition: .3s;
-}
-
 .form-box {
     display: flex;
     padding:10px;
@@ -40,6 +30,7 @@
     max-width: 230px;
     position: relative;
     top: 40px;
+    left: 40px;
 }
 
 .privTxt {
