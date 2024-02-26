@@ -38,10 +38,8 @@
     font-size: 6px;
     max-height: 230px;
     max-width: 230px;
-}
-
-.horArticle .container {
-    padding-top: 0px;
+    position: relative;
+    top: 40px;
 }
 
 .privTxt {

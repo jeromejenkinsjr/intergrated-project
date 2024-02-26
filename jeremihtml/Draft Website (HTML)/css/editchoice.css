@@ -1,6 +1,9 @@
-.pianoTxtandLine {
+.editorsChoice .pianoTxtandLine {
     font-family: "Lato";
-    font-size: 40px;
+}
+
+.editorsChoice h1 {
+    font-size: 48px;
 }
 
 .news-HorArt {
@@ -14,7 +17,13 @@
 }
 
 .mainPart {
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.image {
+    height: 303.6px;
 }
 
 .image img {
@@ -54,4 +63,30 @@
 .editorsChoice .authoranddate {
 	display: flex;
 	justify-content: space-between;
+}
+
+.editorText{
+    color: #7C0D3B
+}
+
+.horArticle .container {
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.editorsChoice .editTitleSect.lineheadthin {
+	width: 950px;
+}
+
+.editorsChoice .editTitleSect .lineheadthick {
+	width: 950px;
+    border-top: 2px solid;
+}
+
+.horArticle .lineheadthick {
+    border-top: 2px solid;
+}
+
+.editheader {
+    padding-bottom: 0px;
 }

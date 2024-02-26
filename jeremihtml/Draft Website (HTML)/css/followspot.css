@@ -1,0 +1,81 @@
+
+    .slogantxt {
+        padding-left: 10px;
+        font-family: "Playfair Display";
+        font-size: 28px;
+        line-height: 30px;
+    }
+    
+    .followSpotify {
+        border: 2px solid;
+        font-family: "Libre Franklin";
+        line-height: 14px;
+        font-size: 6px;
+        max-height: 230px;
+        max-width: 230px;
+        position: relative;
+        top: 40px;
+    }
+    
+    .privTxt {
+        padding-left: 10px;
+        line-height: 7px;
+        font-weight: bold;
+        padding-bottom: 10px;
+        padding-right: 10px;
+        color: #515151
+    }
+    
+    .followSpotify h2 {
+        font-family: "Playfair Display";
+        padding-left: 10px;
+        padding-top: 10px;
+        font-size: 15px;
+        margin-bottom: 5px;
+    }
+
+    .followSpotify img {
+        width: 140px;
+        height: 140px;
+        border: 2px solid #7C0D3B;
+    }
+
+    .followSpotify .spotImgandTxt {
+        padding-left: 10px;
+        display: flex;
+        margin-top: 20px;
+    }
+
+    .followSpotify .spotImgandTxt .spotTxt {
+        margin-left: 10px;
+        display: block;
+    }
+
+    .followSpotify .spotImgandTxt .spotTxt h3 {
+        font-size: 18px;
+        margin-bottom: 11px;
+        font-family: "Playfair Display";
+        font-weight: 400;
+    }
+
+    .followSpotify .spotImgandTxt .spotTxt .OneTxt h3 {
+        font-weight: bold;
+        font-style: italic;
+    }
+
+    .btnandlogo {
+        display: flex;
+        margin-left: 10px;
+    }
+
+    .btnandlogo .button {
+        background-color: #7C0D3B;
+    color: white;
+    font-family: "Lato";
+    font-weight: bold;
+    width: 50px;
+    cursor: pointer;
+    transition: .3s;
+    padding:10px;
+    border: 2px solid black;
+    }
