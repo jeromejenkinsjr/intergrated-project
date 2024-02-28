@@ -1,6 +1,11 @@
-.header {
+/*.header {
 	background-color: #7C0D3B;
 	color: white;
+	width: 100%;
+	position: fixed;
+	z-index: 1000;
+	top: 0;
+  left: 0;
 }
 
 .header h1 {
@@ -38,6 +43,59 @@
 	position: relative;
 	bottom: 15px;
 }
+*/
+
+.header {
+	background-color: #7C0D3B;
+	color: white;
+	width: 100%; /* Set the width to 100% to span the entire viewport */
+	position: fixed;
+	z-index: 1000; /* Ensure it's above other content */
+	top: 0;
+	left: 0;
+	transition: box-shadow 0.3s ease; /* Smooth transition for the drop shadow */
+  }
+  
+  .header-shadow {
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a drop shadow */
+  }
+  
+  .header h1 {
+	font-family: 'Playfair Display';
+	font-size: 40px;
+  }
+  
+  .header .title {
+	display: flex;
+  }
+  
+  .header .titandlin {
+	display:block;
+	margin-right: 10px;
+  }
+  
+  .header .logo img {
+	width: 50px;
+	height: 55px;
+	position: relative;
+	top: 15px;
+  }
+  
+  .header hr.thin1 {
+	width: 380px;
+	margin-left: 0px;
+	position: relative;
+	bottom: 10px;
+  }
+  
+  .header hr.thick1 {
+	width: 380px;
+	margin-left: 0px;
+	border-top: 2px solid;
+	position: relative;
+	bottom: 15px;
+  }
+  
 
 .panel .img {
 	min-height: 211px;
@@ -56,7 +114,10 @@
 
 .articleBlockHead .lineheadthick {
 	border-top: 2px solid;
+	margin-bottom: 0px;
 }
+
+
 
 .articleBlockHead h1 {
 	font-family: 'Playfair Display';
@@ -64,6 +125,9 @@
 	line-height: 45px;
 }
 
+.articleBlockHead {
+	margin-top: 89px;
+}
 
 
 .btn {
@@ -102,3 +166,4 @@
 .btn:hover::before {
     transform: scaleX(1);
 }
+

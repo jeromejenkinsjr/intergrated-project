@@ -20,6 +20,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    max-height: 303.6px;
 }
 
 .image {
@@ -105,4 +106,183 @@
 	position: relative;
 	top: 55px;
 	left: 105px;
+}
+
+.card1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #b9b9b9;
+    position: relative;
+    width: 297.5px;
+    height: 303.6px;
+    
+    overflow: hidden;
+}
+
+.card1:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #7C0D3B;
+    clip-path: circle(100px at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.card1:hover:before {
+    clip-path: circle(150px at 80% -10%);
+
+}
+
+.card1:after {
+    content: "Yamaha";
+    font-family: "Lato";
+    font-size: 7em;
+    font-weight: 800;
+    font-style: italic;
+    color: #868686;
+}
+
+.card1 .imgBox {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+    width: 100%;
+    height: 220px;
+    transition: 0.5s;
+}
+
+
+
+.card1 .imgBox img {
+    position: absolute;
+    top:40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 180px
+}
+
+.card1:hover .imgBox {
+top: 5%;
+transform: translateY(0%);
+}
+
+.card1 .contentBox {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.card1:hover .contentBox {
+height:120px;
+}
+
+.card1 .contentBox h2 {
+    font-size: 18px;
+    font-family: "Lato";
+    letter-spacing: 0.5px;
+    color: #404040;
+    font-weight: 600;
+    position: relative;
+}
+
+.card1 .contentBox  .colourSelect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 20px;
+  transition: 0.5s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.card1:hover .contentBox  .colourSelect {
+    opacity: 1;
+    visibility: visible;
+    transition: 0.5s;
+  }
+  
+
+.card1 .contentBox  .colourSelect h3 {
+    color: #404040;
+    font-family: "Lato";
+    font-weight: 300;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+    line-height: 14px;
+  }
+
+  .card1 .contentBox  .colourSelect span {
+    font-family: "Lato";
+    width: 55px;
+    height: 25px;
+    text-align: center;
+    line-height: 26px;
+    font-size: 14px;
+    display: inline-block;
+    color: #404040;
+    margin: 0 5px;
+    transition: 0.5s;
+    border-radius: 4px;
+    cursor: pointer;
+    border: 1px solid #404040
+  }
+
+  .card1 .contentBox  .colourSelect span.black:hover {
+    background: #000;
+    color: white;
+  }
+
+  .card1 .contentBox  .colourSelect span.white:hover {
+    background: white;
+    color: #000;
+  }
+
+  .card1 .contentBox a {
+    display: inline-block;
+    padding: 10px 10px;
+    background-color: #7C0D3B;
+    border-radius: 4px;
+font-family: "Lato";
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 0.5s;
+  }
+
+  .card1:hover .contentBox a {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+
+  }
+
+  .edittxt h2 {
+    font-family: "Lato";
+    font-weight: 900;
+    position: relative;
+    top: 40px;
+    left: 0px;
+    font-size: 27px;
+    z-index: 2;
+}
+
+.partnerimg img {
+    position: relative;
+    top: 40px;
+    left: 80px;
+    height: 45px;
+    margin-bottom: 5px;
 }

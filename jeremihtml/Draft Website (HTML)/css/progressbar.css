@@ -1,0 +1,14 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  #indicator {
+    position: fixed;
+    top: 133px;
+    left: 0;
+    height: 4px; /* Height of the indicator */
+    background: linear-gradient(to right, #c1c1c1, #383838); /* Gradient background */
+    width: 0; /* Initial width */
+    transition: width 0.2s ease; /* Smooth transition */
+  }
