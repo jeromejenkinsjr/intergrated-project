@@ -137,14 +137,24 @@
 
 }
 
-.card1:after {
+.card1.yamaha:after {
     content: "Yamaha";
     font-family: "Lato";
     font-size: 7em;
     font-weight: 800;
     font-style: italic;
-    color: #868686;
+    color: #afafaf;
 }
+
+.card1.stagg:after {
+    content: "Stagg";
+    font-family: "Lato";
+    font-size: 7em;
+    font-weight: 800;
+    font-style: italic;
+    color: #afafaf;
+}
+
 
 .card1 .imgBox {
     position: absolute;
@@ -235,7 +245,7 @@ height:120px;
     transition: 0.5s;
     border-radius: 4px;
     cursor: pointer;
-    border: 1px solid #404040
+    border: 1px solid #404040;
   }
 
   .card1 .contentBox  .colourSelect span.black:hover {
@@ -286,3 +296,4 @@ font-family: "Lato";
     height: 45px;
     margin-bottom: 5px;
 }
+

@@ -18,6 +18,7 @@
     bottom:5px;
     left: 144px;
     transform: translateX(-50%);
+    margin-top: 7px;
   }
   
   .prev, .next {
@@ -34,7 +35,8 @@
 .carousel .images {
   position: relative;
   display: inline-block;
-  height: 255.28px;
+  height: 144.44px;
+  width: 100%;
 }
 
 .carousel .images img {
@@ -44,15 +46,12 @@
 }
 
   .overlayText {
-    font-family: "Playfair Display";
-    font-size: 28px;
     position: absolute;
     top: 72%;
     left: 0;
     color: #e4e4e4;
-    ;
     padding-left: 8px;
-    line-height: 30px;
+    padding-right: 8px;
   }
 
   .overlayGradient {
@@ -82,9 +81,8 @@
   .carousel h2 {
     font-family: "Playfair Display";
     font-weight: 300;
-    font-size: 28px;
-    line-height: 32px;
-    margin-bottom: 5px
+    font-size: 20px;
+    line-height: 24px;
   }
 
   .smallArticle {

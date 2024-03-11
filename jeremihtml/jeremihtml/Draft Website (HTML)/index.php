@@ -1,4 +1,20 @@
-<!DOCTYPE html>
+<!DOCTYPE html
+<?php
+
+require_once "./author.php";
+require_once "./category.php";
+require_once "./location.php";
+require_once "./story.php";
+
+// $stories = Story::findAll($options = array('limit' => 2, 'offset' => 2));
+
+// $authorId = 7;
+// $stories = Story::findByAuthor($authorId, $options = array('limit' => 3, 'offset' => 2));
+
+$categoryId = 2;
+$podcasts = Story::findByCategory($categoryId, $options = array('limit' => 4, 'offset' => 0));
+
+?>
 <html lang="en">
 
 <head>
@@ -59,7 +75,8 @@
 				</div>
 				<hr class="lineheadthick">
 			</div>
-			<div class="carousel width-3">
+			<div class="carouselSect width-3">
+				<div class="carousel">
 				<div class="carousel__items">
 					<div class="carousel__item">
 						<div class="images">
@@ -88,7 +105,7 @@
 					<button class="next"><B>NEXT</B></button>
 				</div>
 				<script src="js/carousel.js"></script>
-				<div class="smallArticle">
+				<!-- <div class="smallArticle">
 					<div>
 						<div class="category">
 							<h4>ORCHESTRAS</h4>
@@ -101,8 +118,99 @@
 							He lay in the shallow end of the pool for six and a half minutes before being spotted by
 							three lifeguards, an inquest was told today.</p>
 					</div>
+				</div> -->
 				</div>
+				<div class="carousel">
+				<div class="carousel__items">
+					<div class="carousel__item">
+						<div class="images">
+							<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
+							<div class="overlayGradient"></div>
+							<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
+						</div>
+					</div>
+					<div class="carousel__item">
+						<div class="images">
+							<img src="images/sanfranopera.jpg" alt="Opera show in San Francisco" />
+							<div class="overlayGradient"></div>
+							<h2 class="overlayText">How Opera Finances Have Slumped in...</h2>
+						</div>
+					</div>
+					<div class="carousel__item">
+						<div class="images">
+							<img src="images/joyce-cbouw-2024.jpg" alt="Little girl playing piano" />
+							<div class="overlayGradient"></div>
+							<h2 class="overlayText">All Shall Have Prizes: Joyce Goes Dutch</h2>
+						</div>
+					</div>
+				</div>
+				<div class="carousel__nav">
+					<button class="prev"><B>PREV.</B></button>
+					<button class="next"><B>NEXT</B></button>
+				</div>
+				<script src="js/carousel.js"></script>
+				<!-- <div class="smallArticle">
+					<div>
+						<div class="category">
+							<h4>ORCHESTRAS</h4>
+						</div>
+						<h2>Concertmaster Drowned In Shallow End, Inquest Finds</h2>
+					</div>
+					<div>
+						<p>Dominic Hopkins, 57, leader of the Norwich Philharmonic from 2008 to 2016, was swimming at
+							the University of East Anglia on January 27 2022 when he suffered difficulties.
+							He lay in the shallow end of the pool for six and a half minutes before being spotted by
+							three lifeguards, an inquest was told today.</p>
+					</div>
+				</div> -->
+				</div>
+				<div class="carousel">
+					<div class="carousel__items">
+					<div class="carousel__item">
+						<div class="images">
+							<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
+							<div class="overlayGradient"></div>
+							<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
+						</div>
+					</div>
+					<div class="carousel__item">
+						<div class="images">
+							<img src="images/sanfranopera.jpg" alt="Opera show in San Francisco" />
+							<div class="overlayGradient"></div>
+							<h2 class="overlayText">How Opera Finances Have Slumped in...</h2>
+						</div>
+					</div>
+					<div class="carousel__item">
+						<div class="images">
+							<img src="images/joyce-cbouw-2024.jpg" alt="Little girl playing piano" />
+							<div class="overlayGradient"></div>
+							<h2 class="overlayText">All Shall Have Prizes: Joyce Goes Dutch</h2>
+						</div>
+					</div>
+					</div>
+					<div class="carousel__nav">
+					<button class="prev"><B>PREV.</B></button>
+					<button class="next"><B>NEXT</B></button>
+					</div>
+					<script src="js/carousel.js"></script>
+				<!-- <div class="smallArticle">
+					<div>
+						<div class="category">
+							<h4>ORCHESTRAS</h4>
+						</div>
+						<h2>Concertmaster Drowned In Shallow End, Inquest Finds</h2>
+					</div>
+					<div>
+						<p>Dominic Hopkins, 57, leader of the Norwich Philharmonic from 2008 to 2016, was swimming at
+							the University of East Anglia on January 27 2022 when he suffered difficulties.
+							He lay in the shallow end of the pool for six and a half minutes before being spotted by
+							three lifeguards, an inquest was told today.</p>
+					</div>
+				</div> -->
+				</div>
+
 			</div>
+		</div>
 	</section>
 
 	<section class="latestInPiano">
@@ -117,104 +225,33 @@
 			</div>
 		</div>
 		<div class="container">
-			<div class="panel width-3">
-				<div>
-					<div class="category">
-						<h4>PIANO</h4>
-					</div>
-					<h2>What Kind Of Parents Make Their Kids Play Piano?</h2>
+			<?php foreach ($podcasts as $s) { ?>
+				<div class="panel width-3">
+						<div class="category">
+							<h4><?= Category::findById($s->category_id)->name ?></h4>
+						</div>
+						<h2><?= substr($s->headline,0,50) ?>...</h2>
+						<div>
+							<div class="images">
+								<img src="<?= $s->img_url ?>" />
+							</div>
+							<div>
+								<p><?= substr($s->article,0,200) ?>...</p>
+								<hr class="lineheadthin">
+								<div class="authoranddate">
+									<p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+									<p><?= ($s->created_at) ?></p>
+								</div>
+								<hr class="lineheadthick">
+							</div>
+						</div>
+				
 				</div>
-				<div>
-					<div class="images">
-					<img src="images/littlegirlpiano.png" alt="Little girl playing piano" /></div>
-					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he
-						won a MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of
-						‘Speaking Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how
-						he did that.</p>
-					<hr class="lineheadthin">
-					<div class="authoranddate">
-						<p>Norman Lebrecht</p>
-						<p>February 14th, 2024</p>
-					</div>
-					<hr class="lineheadthick">
-				</div>
+			
+    <?php } ?>
 			</div>
-			<div class="panel width-3">
-				<div>
-					<div class="category">
-						<h4>PIANO</h4>
-					</div>
-					<h2>The Making Of A Chinese Piano Star</h2>
-				</div>
-
-				<div>
-					<div class="images">
-					<img src="images/chinesestarwoman.png" alt="Little girl playing piano" /></div>
-					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he
-						won a
-						MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of
-						‘Speaking
-						Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how he did
-						that.
-					</p>
-					<hr class="lineheadthin">
-					<div class="authoranddate">
-						<p>Norman Lebrecht</p>
-						<p>January 30th, 2024</p>
-					</div>
-					<hr class="lineheadthick">
-				</div>
 			</div>
-			<div class="panel width-3">
-				<div>
-					<div class="category">
-						<h4>PIANO</h4>
-					</div>
-					<h2>Mozart With Mao Fujita at Wigmore Hall 10-14 July</h2>
-				</div>
-				<div>
-					<div class="images">
-					<img src="images/maofujita.png" alt="Mao Fujita playing piano" /></div>
-					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he
-						won a
-						MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of
-						‘Speaking
-						Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how he did
-						that.
-					</p>
-					<hr class="lineheadthin">
-					<div class="authoranddate">
-						<p>Norman Lebrecht</p>
-						<p>January 30th, 2024</p>
-					</div>
-					<hr class="lineheadthick">
-				</div>
-
-			</div>
-			<div class="topstories width-3">
-				<ul>
-					<div>
-						<li>EXCLUSIVE: Pletnev's Piano is Stolen on the Road</li>
-						<p>Norman Lebrecht</p>
-					</div>
-					<div>
-						<li>Louis Lortie Review - Putting Fauré's Serene...</li>
-						<p>Rian Evans</p>
-					</div>
-					<div>
-						<li>English National Opera musicians call off strike action after agreement reached</li>
-						<p>Lanre Bakare</p>
-					</div>
-					<div>
-						<li>
-							<b>‘It’s quartet Disney World!’</b> Getting to grips with world’s biggest string quartet
-							festival
-						</li>
-						<p>Flora Willson</p>
-					</div>
-				</ul>
-			</div>
-		</div>
+		
 	</section>
 
 	<section class="editorsChoice">
@@ -287,7 +324,7 @@
 					</div>
 				</div>
 				<div class="partner width-3">
-					<div class="card1">
+					<div class="card1 yamaha">
 						<div class="imgBox">
 							<img src="images/yamahapiano.png">
 						</div>
@@ -358,16 +395,17 @@
 					</div>
 				</div>
 				<div class="partner width-3">
-					<div class="card1">
+					<div class="card1 stagg">
 						<div class="imgBox">
-							<img src="images/yamahapiano.png">
+							<img src="images/violing4m.png">
 						</div>
 						<div class="contentBox">
-							<h2>Yamaha YDP 145 Digital Piano</h2>
+							<h2>Stagg Violin Outfit</h2>
 							<div class="colourSelect">
 								<h3>Available Colours:</h3>
 								<span class="black">Black</span>
-								<span class="white">White</span>
+								<span class="white">Natural</span>
+								<span class="white">Sunburst</span>
 							</div>
 							<a href="https://www.gear4music.ie/Keyboards-and-Pianos/Yamaha-YDP-145-Digital-Piano-Black/4MAU">Buy Now</a>
 						</div>
