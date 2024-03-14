@@ -12,7 +12,7 @@ require_once "./story.php";
 // $stories = Story::findByAuthor($authorId, $options = array('limit' => 3, 'offset' => 2));
 
 $categoryId = 2;
-$podcasts = Story::findByCategory($categoryId, $options = array('limit' => 4, 'offset' => 0));
+$pianoArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 'offset' => 0));
 
 ?>
 <html lang="en">
@@ -225,30 +225,35 @@ $podcasts = Story::findByCategory($categoryId, $options = array('limit' => 4, 'o
 			</div>
 		</div>
 		<div class="container">
-			<?php foreach ($podcasts as $s) { ?>
-				<div class="panel width-3">
-						<div class="category">
-							<h4><?= Category::findById($s->category_id)->name ?></h4>
-						</div>
-						<h2><?= substr($s->headline,0,50) ?>...</h2>
-						<div>
-							<div class="images">
-								<img src="<?= $s->img_url ?>" />
-							</div>
-							<div>
-								<p><?= substr($s->article,0,200) ?>...</p>
-								<hr class="lineheadthin">
-								<div class="authoranddate">
-									<p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
-									<p><?= ($s->created_at) ?></p>
-								</div>
-								<hr class="lineheadthick">
-							</div>
-						</div>
-				
-				</div>
-			
-    <?php } ?>
+		<?php foreach ($pianoArt as $s) {
+    if ($s->category_id === 2) { // Check if category_id is 2
+?>
+        <div class="panel width-3">
+			<div>
+            	<div class="category">
+                	<h4><?= Category::findById($s->category_id)->name ?></h4>
+            	</div>
+            	<h2><?= substr($s->headline,0,50) ?>...</h2>
+			</div>
+            <div>
+                <div class="images">
+                    <img src="images/<?= $s->img_url ?>" />
+                </div>
+                <div>
+                    <p><?= substr($s->article,0,200) ?>...</p>
+                    <hr class="lineheadthin">
+                    <div class="authoranddate">
+                        <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                        <p><?= ($s->created_at) ?></p>
+                    </div>
+                    <hr class="lineheadthick">
+                </div>
+            </div>
+        </div>
+<?php 
+    } // end of if
+} // end of foreach 
+?>
 			</div>
 			</div>
 		

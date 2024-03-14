@@ -1,0 +1,9 @@
+- Finish Excel and database work
+- Create 'Go Further' Section
+    - Create 3 rows of different cateogries e.g 'History' (COPY CODE FROM NATIONALGEOHTML)
+    - Add 'More' button that goes to a page with all the stories with that category
+- Create Footer
+- Finish header
+- Work on Top '' Headlines loop with php
+- Work on Editor's CHOICE
+- Add forced dark mode

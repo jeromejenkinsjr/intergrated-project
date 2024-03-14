@@ -10,7 +10,6 @@ class Story {
     public $img_url;
     public $author_id;
     public $category_id;
-    public $location_id;
     public $created_at;
     public $updated_at;
 
@@ -24,7 +23,6 @@ class Story {
             $this->img_url     = $props["img_url"];
             $this->author_id   = $props["author_id"];
             $this->category_id = $props["category_id"];
-            $this->location_id = $props["location_id"];
             
             if (array_key_exists("created_at", $props)) {
                 $this->created_at = $props["created_at"];
@@ -47,16 +45,15 @@ class Story {
                 ":img_url"     => $this->img_url,
                 ":author_id"   => $this->author_id,
                 ":category_id" => $this->category_id,
-                ":location_id" => $this->location_id,
             ];
 
             if ($this->id === null) {
                 $sql = "INSERT INTO stories (" . 
                        "headline, article, img_url, " . 
-                       "author_id, category_id, location_id" . 
+                       "author_id, category_id" . 
                        ") VALUES (" . 
                        ":headline, :article, :img_url, " . 
-                       ":author_id, :category_id, :location_id" . 
+                       ":author_id, :category_id" . 
                        ")";
             }
             else {
@@ -66,7 +63,6 @@ class Story {
                        "img_url     = :img_url, " .
                        "author_id   = :author_id, " .
                        "category_id = :category_id, " .
-                       "location_id = :location_id, " .
                        "updated_at  = :updated_at " .
                        "WHERE id = :id";
                        
