@@ -11,8 +11,10 @@ require_once "./story.php";
 // $authorId = 7;
 // $stories = Story::findByAuthor($authorId, $options = array('limit' => 3, 'offset' => 2));
 
-$categoryId = 2;
+$categoryId = 1;
 $pianoArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 'offset' => 0));
+$orchestraCategoryId = 2;
+$orchestraArt = Story::findByCategory($orchestraCategoryId, $options = array('limit' => 3, 'offset' => 0)); // Fetch orchestra articles
 
 ?>
 <html lang="en">
@@ -225,8 +227,10 @@ $pianoArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 'o
 			</div>
 		</div>
 		<div class="container">
-		<?php foreach ($pianoArt as $s) {
-    if ($s->category_id === 2) { // Check if category_id is 2
+		<?php 
+foreach ($pianoArt as $s) {
+    // Check if the article's category matches the current category ID
+    if ($s->category_id === $categoryId) { 
 ?>
         <div class="panel width-3">
 			<div>
@@ -252,8 +256,9 @@ $pianoArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 'o
         </div>
 <?php 
     } // end of if
-} // end of foreach 
+} 
 ?>
+
 			</div>
 			</div>
 		
@@ -434,81 +439,37 @@ $pianoArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 'o
 			</div>
 		</div>
 		<div class="container">
-			<div class="panel width-3">
-				<div>
-					<div class="category">
-						<h4>ORCHESTRA</h4>
-					</div>
-					<h2>London Philarmonic Gets a Series on Sky</h2>
-				</div>
-				<div>
-					<div class="images">
-					<img src="images/ed-gardner-mark-allan-lpo.jpg" alt="Little girl playing piano" />
-					</div>
-					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he
-						won a MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of
-						‘Speaking Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how
-						he did that.</p>
-					<hr class="lineheadthin">
-					<div class="authoranddate">
-						<p>Norman Lebrecht</p>
-						<p>February 14th, 2024</p>
-					</div>
-					<hr class="lineheadthick">
-				</div>
+			<?php 
+		foreach ($orchestraArt as $s) {
+    // Check if the article's category matches the current category ID
+    if ($s->category_id === $orchestraCategoryId) { 
+?>
+        <div class="panel width-3">
+			<div>
+            	<div class="category">
+                	<h4><?= Category::findById($s->category_id)->name ?></h4>
+            	</div>
+            	<h2><?= substr($s->headline,0,50) ?>...</h2>
 			</div>
-			<div class="panel width-3">
-				<div>
-					<div class="category">
-						<h4>ORCHESTRA</h4>
-					</div>
-					<h2>The Making Of A Chinese Piano Star</h2>
-				</div>
-
-				<div>
-					<div class="images">
-					<img src="images/chinesestarwoman.png" alt="Little girl playing piano" /></div>
-					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he
-						won a
-						MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of
-						‘Speaking
-						Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how he did
-						that.
-					</p>
-					<hr class="lineheadthin">
-					<div class="authoranddate">
-						<p>Norman Lebrecht</p>
-						<p>January 30th, 2024</p>
-					</div>
-					<hr class="lineheadthick">
-				</div>
-			</div>
-			<div class="panel width-3">
-				<div>
-					<div class="category">
-						<h4>ORCHESTRA</h4>
-					</div>
-					<h2>Mozart With Mao Fujita at Wigmore Hall 10-14 July</h2>
-				</div>
-				<div>
-					<div class="images">
-					<img src="images/maofujita.png" alt="Mao Fujita playing piano" /></div>
-					<p>The American pianist Jeremy Denk was, for many years, just that – an American pianist. Then he
-						won a
-						MacCarthur ‘genius’ grant and wrote a New York Times bestseller. In the latest episode of
-						‘Speaking
-						Soundly’ David Krauss, principal trumpet of the Metropolitan Opera, wants to know how he did
-						that.
-					</p>
-					<hr class="lineheadthin">
-					<div class="authoranddate">
-						<p>Norman Lebrecht</p>
-						<p>January 30th, 2024</p>
-					</div>
-					<hr class="lineheadthick">
-				</div>
-
-			</div>
+            <div>
+                <div class="images">
+                    <img src="images/<?= $s->img_url ?>" />
+                </div>
+                <div>
+                    <p><?= substr($s->article,0,200) ?>...</p>
+                    <hr class="lineheadthin">
+                    <div class="authoranddate">
+                        <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                        <p><?= ($s->created_at) ?></p>
+                    </div>
+                    <hr class="lineheadthick">
+                </div>
+            </div>
+        </div>
+<?php 
+    } // end of if
+} 
+?>
 			<div class="topstories width-3">
 				<ul>
 					<div>
