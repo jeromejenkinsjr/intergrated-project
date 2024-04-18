@@ -496,17 +496,198 @@ foreach ($pianoArt as $s) {
 		</div>
 	</section>
 
-	<section class="goFurther">
-		<div class="container">
-			<div class="gFTitle width-12">
-				<h1>GO FURTHER</h1>
-				<hr class="lineheadthin">
-				<hr class="lineheadthick">
-			</div>
-			<div class="row1 width-12">
-			  	
-			</div>
-		</div>
-	</section>
+	<div class="gofurther">
+        <div class="container">
+            <div class="width-12 title">
+                <h1>GO FURTHER</h1>
+                <img src="images/gofurther/horizrect.png">
+            </div>
+
+            <div class="width-12 subtitle">
+                <h2>ANIMALS</h2>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/animals1.png">
+                <h3>ANIMALS</h3>
+                <p><b>You are what you eat-and for orcas,
+                    that’s bad news</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/animals2.png">
+                <h3>ANIMALS</h3>
+                <p><b>13 stunning photos from this year’s best 
+                    wildlife photographers</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/animals3.png">
+                <h3>ANIMALS</h3>
+                <p><b>Why bedbugs are so good at what they
+                    do</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/animals4.png">
+                <h3>ANIMALS</h3>
+                <p><b>What these flashy feathers reveal about
+                    the secret lives of birds</b></p>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="width-12 subtitle">
+                <h2>ENVIRONMENT</h2>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/CarouselImageCards (1).png">
+                <h3>ENVIRONMENT</h3>
+                <p><b>How wildfire smoke infiltrates your
+                    home—and how to get rid of it</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/img.png">
+                <h3>ENVIRONMENT</h3>
+                <p><b>Haunted Appalachia? The monsters here 
+                    are as old as time</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/CarouselImageCards (2).png">
+                <h3>ENVIRONMENT</h3>
+                <p><b>Leave your dead leaves on the ground 
+                    this fall</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/CarouselImageCards (3).png">
+                <h3>ENVIRONMENT</h3>
+                <p><b>Climate change could make French wine
+                    taste better—for now</b></p>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="width-12 subtitle">
+                <h2>HISTORY & CULTURE</h2>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/CarouselImageCards (4).png">
+                <h3>HISTORY & CULTURE</h3>
+                <p><b>They live in isolation—but the world 
+                    won’t leave them alone</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/CarouselImageCards (5).png">
+                <h3>HISTORY & CULTURE</h3>
+                <p><b>AI just deciphered part of an ancient 
+                    scroll charred by Vesuvius
+                    </b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/CarouselImageCards (6).png">
+                <h3>HISTORY & CULTURE</h3>
+                <p><b>The story of the Belgian princess became
+                    empress of Mexico story of the Belgian 
+                    </b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/CarouselImageCards (7).png">
+                <h3>HISTORY & CULTURE</h3>
+                <p><b>'Denmark’s salvation'? Runestones hint 
+                    at Viking queen's power
+                    </b></p>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="width-12 subtitle">
+                <h2>SCIENCE</h2>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/CarouselImageCards (8).png">
+                <h3>SCIENCE</h3>
+                <p><b>What are the signs of dementia—and 
+                    why is it so hard to diagnose?</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/CarouselImageCards (9).png">
+                <h3>SCIENCE</h3>
+                <p><b>NASA's first mission to a metal-rich 
+                    asteroid prepares for launch
+                    </b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/img (1).png">
+                <h3>SCIENCE</h3>
+                <p><b>It’s good to feel bad after your COVID 
+                    shot
+                    
+                    </b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/img (2).png">
+                <h3>SCIENCE</h3>
+                <p><b>Earth is a geological oddball in our solar
+                    system. This is why.
+                    </b></p>
+            </div>
+
+        </div>
+
+        <div class="container">
+
+            <div class="width-12 subtitle">
+                <h2>TRAVEL</h2>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/img (3).png">
+                <h3>TRAVEL</h3>
+                <p><b>How wildfire smoke infiltrates your
+                    home—and how to get rid of it</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/img (4).png">
+                <h3>TRAVEL</h3>
+                <p><b>Haunted Appalachia? The monsters here 
+                    are as old as time</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/img (5).png">
+                <h3>TRAVEL</h3>
+                <p><b>Leave your dead leaves on the ground 
+                    this fall</b></p>
+            </div>
+
+            <div class="width-3">
+                <img src="images/gofurther/img (6).png">
+                <h3>TRAVEL</h3>
+                <p><b>Climate change could make French wine
+                    taste better—for now</b></p>
+            </div>
+
+        </div>
+
+    </div>
 </body>
 </html>
