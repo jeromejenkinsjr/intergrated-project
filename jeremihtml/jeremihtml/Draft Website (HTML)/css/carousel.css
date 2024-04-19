@@ -10,6 +10,7 @@
   }
   
   .carousel__item {
+    display: flex;
     flex: 0 0 100%;
   }
   
@@ -38,6 +39,8 @@
   height: 144.44px;
   width: 100%;
 }
+
+
 
 .carousel .images img {
   width: 100%;

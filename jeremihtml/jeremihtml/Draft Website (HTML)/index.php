@@ -1,4 +1,4 @@
-<!DOCTYPE html
+<!DOCTYPE html>
 <?php
 
 require_once "./author.php";
@@ -13,10 +13,8 @@ require_once "./story.php";
 
 $categoryId = 1;
 $pianoArt = Story::findByCategory($categoryId);
-$pianoArtLimited = array_slice($pianoArt, 0, 3);
 $orchestraCategoryId = 2;
 $orchestraArt = Story::findByCategory($orchestraCategoryId, $options = array('limit' => 3, 'offset' => 0)); // Fetch orchestra articles
-$pianoGFArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 'offset' => 3));
 
 
 ?>
@@ -33,6 +31,7 @@ $pianoGFArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 
 	<link rel="stylesheet" href="CSS/style.css" />
 	<link rel="stylesheet" href="CSS/lip.css" />
 	<link rel="stylesheet" href="CSS/lio.css" />
+	<link rel="stylesheet" href="CSS/gofurther.css" />
 	<link rel="stylesheet" href="CSS/carousel.css" />
 	<link rel="stylesheet" href="CSS/newsletter.css" />
 	<link rel="stylesheet" href="CSS/editchoice.css" />
@@ -80,103 +79,72 @@ $pianoGFArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 
 				</div>
 				<hr class="lineheadthick">
 			</div>
-			<div class="carouselSect width-3">
-				<div class="carousel">
-				<div class="carousel__items">
-					<div class="carousel__item">
-						<div class="images">
-							<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
-							<div class="overlayGradient"></div>
-							<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
-						</div>
-					</div>
-					<div class="carousel__item">
-						<div class="images">
-							<img src="images/sanfranopera.jpg" alt="Opera show in San Francisco" />
-							<div class="overlayGradient"></div>
-							<h2 class="overlayText">How Opera Finances Have Slumped in...</h2>
-						</div>
-					</div>
-					<div class="carousel__item">
-						<div class="images">
-							<img src="images/joyce-cbouw-2024.jpg" alt="Little girl playing piano" />
-							<div class="overlayGradient"></div>
-							<h2 class="overlayText">All Shall Have Prizes: Joyce Goes Dutch</h2>
-						</div>
-					</div>
-				</div>
-				<div class="carousel__nav">
-					<button class="prev"><B>PREV.</B></button>
-					<button class="next"><B>NEXT</B></button>
-				</div>
-				<script src="js/carousel.js"></script>
-				<!-- <div class="smallArticle">
-					<div>
-						<div class="category">
-							<h4>ORCHESTRAS</h4>
-						</div>
-						<h2>Concertmaster Drowned In Shallow End, Inquest Finds</h2>
-					</div>
-					<div>
-						<p>Dominic Hopkins, 57, leader of the Norwich Philharmonic from 2008 to 2016, was swimming at
-							the University of East Anglia on January 27 2022 when he suffered difficulties.
-							He lay in the shallow end of the pool for six and a half minutes before being spotted by
-							three lifeguards, an inquest was told today.</p>
-					</div>
-				</div> -->
-				</div>
-				<div class="carousel">
-				<div class="carousel__items">
-					<div class="carousel__item">
-						<div class="images">
-							<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
-							<div class="overlayGradient"></div>
-							<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
-						</div>
-					</div>
-					<div class="carousel__item">
-						<div class="images">
-							<img src="images/sanfranopera.jpg" alt="Opera show in San Francisco" />
-							<div class="overlayGradient"></div>
-							<h2 class="overlayText">How Opera Finances Have Slumped in...</h2>
-						</div>
-					</div>
-					<div class="carousel__item">
-						<div class="images">
-							<img src="images/joyce-cbouw-2024.jpg" alt="Little girl playing piano" />
-							<div class="overlayGradient"></div>
-							<h2 class="overlayText">All Shall Have Prizes: Joyce Goes Dutch</h2>
-						</div>
-					</div>
-				</div>
-				<div class="carousel__nav">
-					<button class="prev"><B>PREV.</B></button>
-					<button class="next"><B>NEXT</B></button>
-				</div>
-				<script src="js/carousel.js"></script>
-				<!-- <div class="smallArticle">
-					<div>
-						<div class="category">
-							<h4>ORCHESTRAS</h4>
-						</div>
-						<h2>Concertmaster Drowned In Shallow End, Inquest Finds</h2>
-					</div>
-					<div>
-						<p>Dominic Hopkins, 57, leader of the Norwich Philharmonic from 2008 to 2016, was swimming at
-							the University of East Anglia on January 27 2022 when he suffered difficulties.
-							He lay in the shallow end of the pool for six and a half minutes before being spotted by
-							three lifeguards, an inquest was told today.</p>
-					</div>
-				</div> -->
-				</div>
-				<div class="carousel">
+			<div class="carouselSect width-6">
+				<div class="c1">
+				<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
+	</div>
+				<!-- <div class="carousel">
 					<div class="carousel__items">
-					<div class="carousel__item">
-						<div class="images">
-							<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
-							<div class="overlayGradient"></div>
-							<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
+						<div class="carousel__item">
+							<div>
+								<div class="images">
+									<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
+									<div class="overlayGradient"></div>
+									<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
+								</div>
+							</div>
+							<div>
+								<p>reeeeeeeaqaergegaegerg</p>
+							</div>
 						</div>
+						<div class="carousel__item">
+							<div class="images ">
+									<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
+									<div class="overlayGradient"></div>
+									<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
+								</div>
+						</div>
+						<div class="carousel__item">
+							<div class="images ">
+									<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
+									<div class="overlayGradient"></div>
+									<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
+								</div>
+						</div>
+					</div>
+				</div>
+				<div class="carousel__nav">
+					<button class="prev"><B>PREV.</B></button>
+					<button class="next"><B>NEXT</B></button>
+				</div>
+				<script src="js/carousel.js"></script>
+				<!-- <div class="smallArticle">
+					<div>
+						<div class="category">
+							<h4>ORCHESTRAS</h4>
+						</div>
+						<h2>Concertmaster Drowned In Shallow End, Inquest Finds</h2>
+					</div>
+					<div>
+						<p>Dominic Hopkins, 57, leader of the Norwich Philharmonic from 2008 to 2016, was swimming at
+							the University of East Anglia on January 27 2022 when he suffered difficulties.
+							He lay in the shallow end of the pool for six and a half minutes before being spotted by
+							three lifeguards, an inquest was told today.</p>
+					</div>
+				</div> -->
+				<!--</div>
+				<div class="carousel">
+				<div class="carousel__items">
+					<div class="carousel__item">
+						<div class="width-6">
+							<div class="images">
+								<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
+								<div class="overlayGradient"></div>
+								<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
+							</div>
+						<div class="textBesideImage">
+        <!-- Your text content here --><!--
+    				</div>
 					</div>
 					<div class="carousel__item">
 						<div class="images">
@@ -192,30 +160,19 @@ $pianoGFArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 
 							<h2 class="overlayText">All Shall Have Prizes: Joyce Goes Dutch</h2>
 						</div>
 					</div>
-					</div>
-					<div class="carousel__nav">
+				</div>
+				<div class="carousel__nav">
 					<button class="prev"><B>PREV.</B></button>
 					<button class="next"><B>NEXT</B></button>
-					</div>
-					<script src="js/carousel.js"></script>
-				<!-- <div class="smallArticle">
-					<div>
-						<div class="category">
-							<h4>ORCHESTRAS</h4>
-						</div>
-						<h2>Concertmaster Drowned In Shallow End, Inquest Finds</h2>
-					</div>
-					<div>
-						<p>Dominic Hopkins, 57, leader of the Norwich Philharmonic from 2008 to 2016, was swimming at
-							the University of East Anglia on January 27 2022 when he suffered difficulties.
-							He lay in the shallow end of the pool for six and a half minutes before being spotted by
-							three lifeguards, an inquest was told today.</p>
-					</div>
-				</div> -->
 				</div>
+				<script src="js/carousel.js"></script>
+				</div>
+				
 
 			</div>
+			-->
 		</div>
+	
 	</section>
 
 	<section class="latestInPiano">
@@ -236,6 +193,8 @@ function sortByCreatedAtDesc($a, $b) {
     return strtotime($b->created_at) - strtotime($a->created_at);
 }
 usort($pianoArt, 'sortByCreatedAtDesc');
+
+$pianoArtLimited = array_slice($pianoArt, 0, 3);
 
 foreach ($pianoArtLimited as $s) {
     // Check if the article's category matches the current category ID
@@ -516,31 +475,40 @@ foreach ($pianoArtLimited as $s) {
                 <h2>PIANO</h2>
             </div>
 			<?php 
-			usort($pianoGFArt, 'sortByCreatedAtDesc');
-			foreach ($pianoGFArt as $s) {
-				if ($s->category_id === $categoryId) { 
-			?>
-					<div class="width-3">
-						<div class="images">
-							<img src="images/<?= $s->img_url ?>" />
-						</div>
-						<div class="category">
-							<h4><?= Category::findById($s->category_id)->name ?></h4>
-						</div>
-						<p><?= substr($s->article, 0, 50) ?>...</p>
-						<div>
-							<hr class="lineheadthin">
-							<div class="authoranddate">
-								<p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
-								<p><?= ($s->created_at) ?></p>
-							</div>
-							<hr class="lineheadthick">
-						</div>
-					</div>
-			<?php 
-				} // end of if
-			} // end of foreach
-			?>
+// Sort all piano articles by created_at in descending order
+usort($pianoArt, 'sortByCreatedAtDesc');
+
+// Extract articles from the 4th index onwards and limit it to 4 articles
+$pianoArtSubset = array_slice($pianoArt, 3, 4);
+
+foreach ($pianoArtSubset as $s) {
+    if ($s->category_id === $categoryId) { 
+?>
+        <div class="panel width-3 goFurther">
+			<div>
+            	<div class="images">
+                	<img src="images/<?= $s->img_url ?>" />
+            	</div>
+            	<div class="category">
+                	<h4><?= Category::findById($s->category_id)->name ?></h4>
+            	</div>
+			</div>
+			<div>
+            	<p><?= substr($s->article, 0, 50) ?>...</p>
+            	<div>
+                	<hr class="lineheadthin">
+                	<div class="authoranddate">
+                    	<p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                    	<p><?= ($s->created_at) ?></p>
+                	</div>
+                	<hr class="lineheadthick">
+            	</div>
+			</div>
+        </div>
+<?php 
+    } // end of if
+} // end of foreach
+?>
 			
         </div>
 

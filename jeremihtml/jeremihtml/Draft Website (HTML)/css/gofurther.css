@@ -1,6 +1,5 @@
 .goFurther h3:hover{
     text-decoration: underline;
-
 }
 
 .goFurther {
@@ -12,6 +11,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.goFurther .category h4 {
+	padding-left: 15px;
+	padding-right: 15px;
+	position: relative;
+	background-color: #7C0D3B;
+	display: inline-block; /* Add this line */
+}
+
+.goFurther .panel{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 .goFurther h1 {
@@ -40,11 +54,18 @@
         margin-bottom: 10px;
     }
 
-  .goFurther  img,
-    picture {
-        max-width: 100%;
-        display: block;
-    }
+    .goFurther .images {
+        position: relative;
+      display: inline-block;
+      height: 167.34px;
+      width: 297.5px;
+      }
+    
+      .goFurther .images img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* Ensure the image covers the entire container */
+      }
 
     .goFurther p {
         margin-left: 0px;
