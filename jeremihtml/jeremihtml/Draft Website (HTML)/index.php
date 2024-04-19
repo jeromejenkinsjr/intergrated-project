@@ -12,9 +12,12 @@ require_once "./story.php";
 // $stories = Story::findByAuthor($authorId, $options = array('limit' => 3, 'offset' => 2));
 
 $categoryId = 1;
-$pianoArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 'offset' => 0));
+$pianoArt = Story::findByCategory($categoryId);
+$pianoArtLimited = array_slice($pianoArt, 0, 3);
 $orchestraCategoryId = 2;
 $orchestraArt = Story::findByCategory($orchestraCategoryId, $options = array('limit' => 3, 'offset' => 0)); // Fetch orchestra articles
+$pianoGFArt = Story::findByCategory($categoryId, $options = array('limit' => 4, 'offset' => 3));
+
 
 ?>
 <html lang="en">
@@ -228,7 +231,13 @@ $orchestraArt = Story::findByCategory($orchestraCategoryId, $options = array('li
 		</div>
 		<div class="container">
 		<?php 
-foreach ($pianoArt as $s) {
+
+function sortByCreatedAtDesc($a, $b) {
+    return strtotime($b->created_at) - strtotime($a->created_at);
+}
+usort($pianoArt, 'sortByCreatedAtDesc');
+
+foreach ($pianoArtLimited as $s) {
     // Check if the article's category matches the current category ID
     if ($s->category_id === $categoryId) { 
 ?>
@@ -496,7 +505,7 @@ foreach ($pianoArt as $s) {
 		</div>
 	</section>
 
-	<div class="gofurther">
+	<div class="goFurther">
         <div class="container">
             <div class="width-12 title">
                 <h1>GO FURTHER</h1>
@@ -504,37 +513,35 @@ foreach ($pianoArt as $s) {
             </div>
 
             <div class="width-12 subtitle">
-                <h2>ANIMALS</h2>
+                <h2>PIANO</h2>
             </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/animals1.png">
-                <h3>ANIMALS</h3>
-                <p><b>You are what you eat-and for orcas,
-                    that’s bad news</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/animals2.png">
-                <h3>ANIMALS</h3>
-                <p><b>13 stunning photos from this year’s best 
-                    wildlife photographers</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/animals3.png">
-                <h3>ANIMALS</h3>
-                <p><b>Why bedbugs are so good at what they
-                    do</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/animals4.png">
-                <h3>ANIMALS</h3>
-                <p><b>What these flashy feathers reveal about
-                    the secret lives of birds</b></p>
-            </div>
-
+			<?php 
+			usort($pianoGFArt, 'sortByCreatedAtDesc');
+			foreach ($pianoGFArt as $s) {
+				if ($s->category_id === $categoryId) { 
+			?>
+					<div class="width-3">
+						<div class="images">
+							<img src="images/<?= $s->img_url ?>" />
+						</div>
+						<div class="category">
+							<h4><?= Category::findById($s->category_id)->name ?></h4>
+						</div>
+						<p><?= substr($s->article, 0, 50) ?>...</p>
+						<div>
+							<hr class="lineheadthin">
+							<div class="authoranddate">
+								<p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+								<p><?= ($s->created_at) ?></p>
+							</div>
+							<hr class="lineheadthick">
+						</div>
+					</div>
+			<?php 
+				} // end of if
+			} // end of foreach
+			?>
+			
         </div>
 
         <div class="container">
