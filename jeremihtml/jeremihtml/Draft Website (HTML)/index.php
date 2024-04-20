@@ -120,6 +120,10 @@ $operaArtC = array_slice($operaArt, 0, 3);
             <button class="next"><B>NEXT</B></button>
         </div>
     </div>
+	<div class="banner">
+	<hr class="seperator">
+	<img src="images/trebleclefbanner.png"/>
+</div>
 	<div class="carouselSect width-6">
     <div class="carousel">
 	<?php 
@@ -239,6 +243,24 @@ foreach ($pianoArtLimited as $s) {
     } // end of if
 } 
 ?>
+
+<div class="topstories width-3">
+<?php usort($pianoArt, 'sortByCreatedAtDesc');
+
+// Extract articles from the 4th index onwards and limit it to 4 articles
+$pianoArtSubset = array_slice($pianoArt, 3, 4); 
+?>
+    <ul>
+        <?php foreach ($pianoArtSubset as $s) : ?>
+            <?php if ($s->category_id === $categoryId) : ?>
+                <li>
+                    <h2><?= substr($s->headline, 0, 50) ?>...</h2>
+					<p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</div>
 
 			</div>
 			</div>

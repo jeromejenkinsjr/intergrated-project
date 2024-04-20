@@ -69,7 +69,22 @@
 
     .goFurther p {
         margin-left: 0px;
-        margin-bottom: 80px;
-        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: "Libre Franklin";
 
+    }
+
+    .goFurther .lineheadthick {
+        border-top: 2px solid;
+    }
+    
+    .goFurther .authoranddate {
+        display: flex;
+        justify-content: space-between;
+    }
+    
+    .goFurther .authoranddate p {
+        margin-top: 0px;
+        font-family: "Libre Franklin";
+        font-size: 12px;
+        font-weight: 200;
     }

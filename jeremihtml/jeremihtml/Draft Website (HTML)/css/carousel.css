@@ -19,7 +19,6 @@
   
   .carousel__nav {
     position: relative;
-    bottom:5px;
     margin-top: 7px;
   }
   
@@ -108,3 +107,21 @@
     display: block;
     justify-content: space-between; /* Add space between carousels */
   }
+
+  hr.seperator {
+    border-width: 2px; /* Adjust this value as needed */
+    border-color: #7C0D3B;
+    border-style: solid; /* This ensures the border is a solid line */
+    margin: 20px 0px;
+}
+
+.banner img {
+  position: relative;
+  top: -45px;
+  left: 275px;
+  max-width: 7%;
+}
+
+.banner {
+  height: 25px;
+}
