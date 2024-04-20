@@ -14,9 +14,11 @@ require_once "./story.php";
 $categoryId = 1;
 $pianoArt = Story::findByCategory($categoryId);
 $orchestraCategoryId = 2;
-$orchestraArt = Story::findByCategory($orchestraCategoryId, $options = array('limit' => 3, 'offset' => 0)); // Fetch orchestra articles
+$orchestraArt = Story::findByCategory($orchestraCategoryId); // Fetch orchestra articles
 $operaCategoryId = 5;
 $operaArt = Story::findByCategory($operaCategoryId);
+$historyCategoryId = 4;
+$historyArt = Story::findByCategory($historyCategoryId);
 
 
 ?>
@@ -102,7 +104,7 @@ $operaArtC = array_slice($operaArt, 0, 3);
                 }
             }
             ?>
-            <div class="carousel__item">
+            <a href="webpage.php?id=<?= $s->id ?>" class="carousel__item"> <!-- Add the <a> tag here -->
                 <div class="images">
                     <img src="images/<?= $s->img_url ?>" />
                     <div class="overlayGradient"></div>
@@ -111,9 +113,11 @@ $operaArtC = array_slice($operaArt, 0, 3);
                 <div class="text-container">
                     <p><?= substr($s->article, 0, 70) ?>...</p>
                 </div>
-            </div>
+            </a>
         <?php } // end of if
     } ?>
+
+
 </div>
         <div class="carousel__nav">
             <button class="prev"><B>PREV.</B></button>
@@ -145,7 +149,7 @@ $operaArtC = array_slice($operaArt, 0, 3);
                 }
             }
             ?>
-            <div class="carousel__item">
+            <a href="webpage.php?id=<?= $s->id ?>" class="carousel__item"> <!-- Add the <a> tag here -->
                 <div class="images">
                     <img src="images/<?= $s->img_url ?>" />
                     <div class="overlayGradient"></div>
@@ -154,9 +158,10 @@ $operaArtC = array_slice($operaArt, 0, 3);
                 <div class="text-container">
                     <p><?= substr($s->article, 0, 70) ?>...</p>
                 </div>
-            </div>
+            </a>
         <?php } // end of if
     } ?>
+
 </div>
         <div class="carousel__nav">
             <button class="prev"><B>PREV.</B></button>
@@ -209,27 +214,29 @@ $operaArtC = array_slice($operaArt, 0, 3);
 function sortByCreatedAtDesc($a, $b) {
     return strtotime($b->created_at) - strtotime($a->created_at);
 }
+
 usort($pianoArt, 'sortByCreatedAtDesc');
 
 $pianoArtLimited = array_slice($pianoArt, 0, 3);
-
 foreach ($pianoArtLimited as $s) {
     // Check if the article's category matches the current category ID
     if ($s->category_id === $categoryId) { 
 ?>
         <div class="panel width-3">
-			<div>
-            	<div class="category">
-                	<h4><?= Category::findById($s->category_id)->name ?></h4>
-            	</div>
-            	<h2><?= substr($s->headline,0,50) ?>...</h2>
-			</div>
+            <a href="webpage.php?id=<?= $s->id ?>">
+                <div>
+                    <div class="category">
+                        <h4><?= Category::findById($s->category_id)->name ?></h4>
+                    </div>
+                    <h2><?= substr($s->headline, 0, 50) ?>...</h2>
+                </div>
             <div>
                 <div class="images">
                     <img src="images/<?= $s->img_url ?>" />
                 </div>
                 <div>
-                    <p><?= substr($s->article,0,200) ?>...</p>
+                    <p><?= substr($s->article, 0, 200) ?>...</p>
+					</a>
                     <hr class="lineheadthin">
                     <div class="authoranddate">
                         <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
@@ -244,23 +251,30 @@ foreach ($pianoArtLimited as $s) {
 } 
 ?>
 
-<div class="topstories width-3">
-<?php usort($pianoArt, 'sortByCreatedAtDesc');
 
-// Extract articles from the 4th index onwards and limit it to 4 articles
-$pianoArtSubset = array_slice($pianoArt, 3, 4); 
-?>
+
+
+<div class="topstories width-3">
+    <?php 
+    usort($pianoArt, 'sortByCreatedAtDesc');
+
+    // Extract articles from the 4th index onwards and limit it to 4 articles
+    $pianoArtSubset = array_slice($pianoArt, 3, 4); 
+    ?>
     <ul>
         <?php foreach ($pianoArtSubset as $s) : ?>
             <?php if ($s->category_id === $categoryId) : ?>
                 <li>
-                    <h2><?= substr($s->headline, 0, 50) ?>...</h2>
-					<p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                    <a href="webpage.php?id=<?= $s->id ?>">
+                        <h2><?= substr($s->headline, 0, 50) ?>...</h2>
+                        <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                    </a>
                 </li>
             <?php endif; ?>
         <?php endforeach; ?>
     </ul>
 </div>
+
 
 			</div>
 			</div>
@@ -442,24 +456,29 @@ $pianoArtSubset = array_slice($pianoArt, 3, 4);
 			</div>
 		</div>
 		<div class="container">
-			<?php 
-		foreach ($orchestraArt as $s) {
+		<?php 
+usort($orchestraArt, 'sortByCreatedAtDesc');
+
+$orchestraArtLimited = array_slice($orchestraArt, 0, 3);
+foreach ($orchestraArtLimited as $s) {
     // Check if the article's category matches the current category ID
     if ($s->category_id === $orchestraCategoryId) { 
 ?>
         <div class="panel width-3">
-			<div>
-            	<div class="category">
-                	<h4><?= Category::findById($s->category_id)->name ?></h4>
-            	</div>
-            	<h2><?= substr($s->headline,0,50) ?>...</h2>
-			</div>
+            <a href="webpage.php?id=<?= $s->id ?>">
+                <div>
+                    <div class="category">
+                        <h4><?= Category::findById($s->category_id)->name ?></h4>
+                    </div>
+                    <h2><?= substr($s->headline, 0, 50) ?>...</h2>
+                </div>
+            </a>
             <div>
                 <div class="images">
                     <img src="images/<?= $s->img_url ?>" />
                 </div>
                 <div>
-                    <p><?= substr($s->article,0,200) ?>...</p>
+                    <p><?= substr($s->article, 0, 200) ?>...</p>
                     <hr class="lineheadthin">
                     <div class="authoranddate">
                         <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
@@ -473,29 +492,28 @@ $pianoArtSubset = array_slice($pianoArt, 3, 4);
     } // end of if
 } 
 ?>
+
 			<div class="topstories width-3">
-				<ul>
-					<div>
-						<li>EXCLUSIVE: Pletnev's Piano is Stolen on the Road</li>
-						<p>Norman Lebrecht</p>
-					</div>
-					<div>
-						<li>Louis Lortie Review - Putting Fauré's Serene...</li>
-						<p>Rian Evans</p>
-					</div>
-					<div>
-						<li>English National Opera musicians call off strike action after agreement reached</li>
-						<p>Lanre Bakare</p>
-					</div>
-					<div>
-						<li>
-							<b>‘It’s quartet Disney World!’</b> Getting to grips with world’s biggest string quartet
-							festival
-						</li>
-						<p>Flora Willson</p>
-					</div>
-				</ul>
-			</div>
+    <?php 
+    usort($orchestraArt, 'sortByCreatedAtDesc');
+
+    // Extract articles from the 4th index onwards and limit it to 4 articles
+    $orchestraArtSubset = array_slice($orchestraArt, 3, 4); 
+    ?>
+    <ul>
+        <?php foreach ($orchestraArtSubset as $s) : ?>
+            <?php if ($s->category_id === $orchestraCategoryId) : ?>
+                <li>
+                    <a href="webpage.php?id=<?= $s->id ?>">
+                        <h2><?= substr($s->headline, 0, 50) ?>...</h2>
+                        <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                    </a>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+</div>
+
 		</div>
 	</section>
 
@@ -509,27 +527,166 @@ $pianoArtSubset = array_slice($pianoArt, 3, 4);
             <div class="width-12 subtitle">
                 <h2>PIANO</h2>
             </div>
-			<?php 
-// Sort all piano articles by created_at in descending order
-usort($pianoArt, 'sortByCreatedAtDesc');
-
-// Extract articles from the 4th index onwards and limit it to 4 articles
-$pianoArtSubset = array_slice($pianoArt, 3, 4);
-
+			<?php
 foreach ($pianoArtSubset as $s) {
     if ($s->category_id === $categoryId) { 
 ?>
         <div class="panel width-3 goFurther">
+            <div>
+                <a href="webpage.php?id=<?= $s->id ?>">
+                    <div class="images">
+                        <img src="images/<?= $s->img_url ?>" />
+                    </div>
+                    <div class="category">
+                        <h4><?= Category::findById($s->category_id)->name ?></h4>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <p><?= substr($s->article, 0, 50) ?>...</p>
+                <a href="webpage.php?id=<?= $s->id ?>">
+                    <div>
+                        <hr class="lineheadthin">
+                        <div class="authoranddate">
+                            <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                            <p><?= ($s->created_at) ?></p>
+                        </div>
+                        <hr class="lineheadthick">
+                    </div>
+                </a>
+            </div>
+        </div>
+<?php 
+    } // end of if
+} // end of foreach
+?>
+
+			
+        </div>
+
+        <div class="container">
+
+            <div class="width-12 subtitle">
+                <h2>HISTORY</h2>
+            </div>
+
+            <?php
+			$historyArtSubset = array_slice($historyArt, 0, 3); 
+foreach ($historyArtSubset as $s) {
+    if ($s->category_id === $historyCategoryId) { 
+?>
+        <div class="panel width-3 goFurther">
+            <div>
+                <a href="webpage.php?id=<?= $s->id ?>">
+                    <div class="images">
+                        <img src="images/<?= $s->img_url ?>" />
+                    </div>
+                    <div class="category">
+                        <h4><?= Category::findById($s->category_id)->name ?></h4>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <p><?= substr($s->article, 0, 50) ?>...</p>
+                <a href="webpage.php?id=<?= $s->id ?>">
+                    <div>
+                        <hr class="lineheadthin">
+                        <div class="authoranddate">
+                            <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                            <p><?= ($s->created_at) ?></p>
+                        </div>
+                        <hr class="lineheadthick">
+                    </div>
+                </a>
+            </div>
+        </div>
+<?php 
+    } // end of if
+} // end of foreach
+?>
+
+</div>
+
+        <div class="container">
+
+            <div class="width-12 subtitle">
+                <h2>ORCHESTRA</h2>
+            </div>
+
+            <?php 
+// Sort all piano articles by created_at in descending order
+usort($orchestraArt, 'sortByCreatedAtDesc');
+
+// Extract articles from the 4th index onwards and limit it to 4 articles
+$orchestraArtSubset = array_slice($orchestraArt, 3, 4);
+
+foreach ($orchestraArtSubset as $s) {
+    if ($s->category_id === $orchestraCategoryId) { 
+?>
+        <div class="panel width-3 goFurther">
+            <div>
+                <a href="webpage.php?id=<?= $s->id ?>">
+                    <div class="images">
+                        <img src="images/<?= $s->img_url ?>" />
+                    </div>
+                    <div class="category">
+                        <h4><?= Category::findById($s->category_id)->name ?></h4>
+                    </div>
+                </a>
+            </div>
+            <div>
+                <p><?= substr($s->article, 0, 50) ?>...</p>
+                <a href="webpage.php?id=<?= $s->id ?>">
+                    <div>
+                        <hr class="lineheadthin">
+                        <div class="authoranddate">
+                            <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                            <p><?= ($s->created_at) ?></p>
+                        </div>
+                        <hr class="lineheadthick">
+                    </div>
+                </a>
+            </div>
+        </div>
+<?php 
+    } // end of if
+} // end of foreach
+?>
+
+			
+        
+
+        </div>
+
+        <div class="container">
+
+            <div class="width-12 subtitle">
+                <h2>OPERA</h2>
+            </div>
+			<?php
+usort($operaArt, 'sortByCreatedAtDesc');
+
+// Extract articles from the 4th index onwards and limit it to 4 articles
+$operaArtSubset = array_slice($operaArt, 3, 4);
+
+foreach ($operaArtSubset as $s) {
+    if ($s->category_id === $operaCategoryId) { 
+?>
+        <div class="panel width-3 goFurther">
 			<div>
-            	<div class="images">
-                	<img src="images/<?= $s->img_url ?>" />
-            	</div>
-            	<div class="category">
-                	<h4><?= Category::findById($s->category_id)->name ?></h4>
-            	</div>
+                <a href="webpage.php?id=<?= $s->id ?>">
+                    <div class="images">
+                        <img src="images/<?= $s->img_url ?>" />
+                    </div>
+                    <div class="category">
+                        <h4><?= Category::findById($s->category_id)->name ?></h4>
+                    </div>
+                </a>
 			</div>
 			<div>
-            	<p><?= substr($s->article, 0, 50) ?>...</p>
+                <a href="webpage.php?id=<?= $s->id ?>">
+                    <p><?= substr($s->article, 0, 50) ?>...</p>
+                </a>
             	<div>
                 	<hr class="lineheadthin">
                 	<div class="authoranddate">
@@ -544,158 +701,8 @@ foreach ($pianoArtSubset as $s) {
     } // end of if
 } // end of foreach
 ?>
+
 			
-        </div>
-
-        <div class="container">
-
-            <div class="width-12 subtitle">
-                <h2>ENVIRONMENT</h2>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/CarouselImageCards (1).png">
-                <h3>ENVIRONMENT</h3>
-                <p><b>How wildfire smoke infiltrates your
-                    home—and how to get rid of it</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/img.png">
-                <h3>ENVIRONMENT</h3>
-                <p><b>Haunted Appalachia? The monsters here 
-                    are as old as time</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/CarouselImageCards (2).png">
-                <h3>ENVIRONMENT</h3>
-                <p><b>Leave your dead leaves on the ground 
-                    this fall</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/CarouselImageCards (3).png">
-                <h3>ENVIRONMENT</h3>
-                <p><b>Climate change could make French wine
-                    taste better—for now</b></p>
-            </div>
-
-        </div>
-
-        <div class="container">
-
-            <div class="width-12 subtitle">
-                <h2>HISTORY & CULTURE</h2>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/CarouselImageCards (4).png">
-                <h3>HISTORY & CULTURE</h3>
-                <p><b>They live in isolation—but the world 
-                    won’t leave them alone</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/CarouselImageCards (5).png">
-                <h3>HISTORY & CULTURE</h3>
-                <p><b>AI just deciphered part of an ancient 
-                    scroll charred by Vesuvius
-                    </b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/CarouselImageCards (6).png">
-                <h3>HISTORY & CULTURE</h3>
-                <p><b>The story of the Belgian princess became
-                    empress of Mexico story of the Belgian 
-                    </b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/CarouselImageCards (7).png">
-                <h3>HISTORY & CULTURE</h3>
-                <p><b>'Denmark’s salvation'? Runestones hint 
-                    at Viking queen's power
-                    </b></p>
-            </div>
-
-        </div>
-
-        <div class="container">
-
-            <div class="width-12 subtitle">
-                <h2>SCIENCE</h2>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/CarouselImageCards (8).png">
-                <h3>SCIENCE</h3>
-                <p><b>What are the signs of dementia—and 
-                    why is it so hard to diagnose?</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/CarouselImageCards (9).png">
-                <h3>SCIENCE</h3>
-                <p><b>NASA's first mission to a metal-rich 
-                    asteroid prepares for launch
-                    </b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/img (1).png">
-                <h3>SCIENCE</h3>
-                <p><b>It’s good to feel bad after your COVID 
-                    shot
-                    
-                    </b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/img (2).png">
-                <h3>SCIENCE</h3>
-                <p><b>Earth is a geological oddball in our solar
-                    system. This is why.
-                    </b></p>
-            </div>
-
-        </div>
-
-        <div class="container">
-
-            <div class="width-12 subtitle">
-                <h2>TRAVEL</h2>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/img (3).png">
-                <h3>TRAVEL</h3>
-                <p><b>How wildfire smoke infiltrates your
-                    home—and how to get rid of it</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/img (4).png">
-                <h3>TRAVEL</h3>
-                <p><b>Haunted Appalachia? The monsters here 
-                    are as old as time</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/img (5).png">
-                <h3>TRAVEL</h3>
-                <p><b>Leave your dead leaves on the ground 
-                    this fall</b></p>
-            </div>
-
-            <div class="width-3">
-                <img src="images/gofurther/img (6).png">
-                <h3>TRAVEL</h3>
-                <p><b>Climate change could make French wine
-                    taste better—for now</b></p>
-            </div>
-
         </div>
 
     </div>
