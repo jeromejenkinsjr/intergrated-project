@@ -15,6 +15,8 @@ $categoryId = 1;
 $pianoArt = Story::findByCategory($categoryId);
 $orchestraCategoryId = 2;
 $orchestraArt = Story::findByCategory($orchestraCategoryId, $options = array('limit' => 3, 'offset' => 0)); // Fetch orchestra articles
+$operaCategoryId = 5;
+$operaArt = Story::findByCategory($operaCategoryId);
 
 
 ?>
@@ -80,99 +82,110 @@ $orchestraArt = Story::findByCategory($orchestraCategoryId, $options = array('li
 				<hr class="lineheadthick">
 			</div>
 			<div class="carouselSect width-6">
-				<div class="c1">
-				<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
-	</div>
-				<!-- <div class="carousel">
-					<div class="carousel__items">
-						<div class="carousel__item">
-							<div>
-								<div class="images">
-									<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
-									<div class="overlayGradient"></div>
-									<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
-								</div>
-							</div>
-							<div>
-								<p>reeeeeeeaqaergegaegerg</p>
-							</div>
-						</div>
-						<div class="carousel__item">
-							<div class="images ">
-									<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
-									<div class="overlayGradient"></div>
-									<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
-								</div>
-						</div>
-						<div class="carousel__item">
-							<div class="images ">
-									<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
-									<div class="overlayGradient"></div>
-									<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
-								</div>
-						</div>
-					</div>
-				</div>
-				<div class="carousel__nav">
-					<button class="prev"><B>PREV.</B></button>
-					<button class="next"><B>NEXT</B></button>
-				</div>
-				<script src="js/carousel.js"></script>
-				<!-- <div class="smallArticle">
-					<div>
-						<div class="category">
-							<h4>ORCHESTRAS</h4>
-						</div>
-						<h2>Concertmaster Drowned In Shallow End, Inquest Finds</h2>
-					</div>
-					<div>
-						<p>Dominic Hopkins, 57, leader of the Norwich Philharmonic from 2008 to 2016, was swimming at
-							the University of East Anglia on January 27 2022 when he suffered difficulties.
-							He lay in the shallow end of the pool for six and a half minutes before being spotted by
-							three lifeguards, an inquest was told today.</p>
-					</div>
-				</div> -->
-				<!--</div>
-				<div class="carousel">
-				<div class="carousel__items">
-					<div class="carousel__item">
-						<div class="width-6">
-							<div class="images">
-								<img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
-								<div class="overlayGradient"></div>
-								<h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
-							</div>
-						<div class="textBesideImage">
-        <!-- Your text content here --><!--
-    				</div>
-					</div>
-					<div class="carousel__item">
-						<div class="images">
-							<img src="images/sanfranopera.jpg" alt="Opera show in San Francisco" />
-							<div class="overlayGradient"></div>
-							<h2 class="overlayText">How Opera Finances Have Slumped in...</h2>
-						</div>
-					</div>
-					<div class="carousel__item">
-						<div class="images">
-							<img src="images/joyce-cbouw-2024.jpg" alt="Little girl playing piano" />
-							<div class="overlayGradient"></div>
-							<h2 class="overlayText">All Shall Have Prizes: Joyce Goes Dutch</h2>
-						</div>
-					</div>
-				</div>
-				<div class="carousel__nav">
-					<button class="prev"><B>PREV.</B></button>
-					<button class="next"><B>NEXT</B></button>
-				</div>
-				<script src="js/carousel.js"></script>
-				</div>
-				
+    <div class="carousel">
+	<?php 
+usort($operaArt, 'sortByCreatedAtDesc');
+$operaArtC = array_slice($operaArt, 0, 3);
+?>
+<div class="carousel__items">
+    <?php foreach ($operaArtC as $s) {
+        // Check if the article's category matches the current category ID
+        if ($s->category_id === $operaCategoryId) { 
+            $headline = $s->headline;
+            if (strlen($headline) > 40) {
+                // Find the position of the last space within the substring of the headline
+                $last_space = strrpos(substr($headline, 0, 40), ' ');
+                if ($last_space !== false) {
+                    $headline = substr($headline, 0, $last_space) . '...'; // Truncate at the last space
+                } else {
+                    $headline = substr($headline, 0, 40) . '...'; // Truncate at character limit if no space found
+                }
+            }
+            ?>
+            <div class="carousel__item">
+                <div class="images">
+                    <img src="images/<?= $s->img_url ?>" />
+                    <div class="overlayGradient"></div>
+                    <h2 class="overlayText"><?= $headline ?></h2>
+                </div>
+                <div class="text-container">
+                    <p><?= substr($s->article, 0, 70) ?>...</p>
+                </div>
+            </div>
+        <?php } // end of if
+    } ?>
+</div>
+        <div class="carousel__nav">
+            <button class="prev"><B>PREV.</B></button>
+            <button class="next"><B>NEXT</B></button>
+        </div>
+    </div>
+	<div class="carouselSect width-6">
+    <div class="carousel">
+	<?php 
+usort($operaArt, 'sortByCreatedAtDesc');
+$operaArtC = array_slice($operaArt, 0, 3);
+?>
+<div class="carousel__items">
+    <?php foreach ($operaArtC as $s) {
+        // Check if the article's category matches the current category ID
+        if ($s->category_id === $operaCategoryId) { 
+            $headline = $s->headline;
+            if (strlen($headline) > 40) {
+                // Find the position of the last space within the substring of the headline
+                $last_space = strrpos(substr($headline, 0, 40), ' ');
+                if ($last_space !== false) {
+                    $headline = substr($headline, 0, $last_space) . '...'; // Truncate at the last space
+                } else {
+                    $headline = substr($headline, 0, 40) . '...'; // Truncate at character limit if no space found
+                }
+            }
+            ?>
+            <div class="carousel__item">
+                <div class="images">
+                    <img src="images/<?= $s->img_url ?>" />
+                    <div class="overlayGradient"></div>
+                    <h2 class="overlayText"><?= $headline ?></h2>
+                </div>
+                <div class="text-container">
+                    <p><?= substr($s->article, 0, 70) ?>...</p>
+                </div>
+            </div>
+        <?php } // end of if
+    } ?>
+</div>
+        <div class="carousel__nav">
+            <button class="prev"><B>PREV.</B></button>
+            <button class="next"><B>NEXT</B></button>
+        </div>
+    </div>
+</div>
 
-			</div>
-			-->
-		</div>
 	
+</div>
+<script src="js/carousel.js"></script>
+
+    <!-- <div class="carousel">
+        <div class="carousel__items">
+            <div class="carousel__item">
+                <div class="images">
+                    <img src="images/amadeus-1.jpg" alt="Little girl playing piano" />
+                    <div class="overlayGradient"></div>
+                    <h2 class="overlayText">Sky’s The Limit For Amadeus</h2>
+                </div>
+                <div>
+                    <p>ERGaerjgirheohfIWREHUAIWUHF</p>
+                </div>
+            </div>
+        </div>
+        <button class="prev">Previous</button>
+        <button class="next">Next</button>
+    </div>
+</div>
+
+		</div>
+		<script src="js/carousel.js"></script>
+	-->
 	</section>
 
 	<section class="latestInPiano">
