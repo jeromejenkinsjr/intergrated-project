@@ -2,10 +2,7 @@
     text-decoration: underline;
 }
 
-.goFurther {
-    background-color: black;
-    color: white;
-}
+
 
 .goFurther .container .title {
     display: flex;
@@ -29,12 +26,9 @@
 }
 
 .goFurther h1 {
-    font-family: centuryGothicBold;
-    letter-spacing: 3px;
-
-    margin-top: 90px;
-    margin-bottom: 12px;
-    font-size: 74px;
+    font-family: 'Lato';
+    color: #7C0D3B;
+    font-size: 48px;
 }
 
 .goFurther h2 {

@@ -2,7 +2,7 @@
 <?php
 require_once "./etc/config.php";
 require_once "story.php";
-
+require "./author.php";
 try {
     if ($_SERVER["REQUEST_METHOD"] !== "GET") {
         throw new Exception("Invalid request method");
@@ -40,7 +40,7 @@ catch (Exception $ex) {
         <div class="story">
             <?php if (isset($story)) : ?>
                 <h2><?= $story->headline ?></h2>
-                <p><strong>Author:</strong> <?= $story->author_id ?></p>
+                <p>By <?= Author::findById($story->author_id)->first_name . " " . Author::findById($story->author_id)->last_name ?></p>
                 <p><strong>Published Date:</strong> <?= $story->created_at ?></p>
                 <div class="content">
                     <?= $story->article ?>

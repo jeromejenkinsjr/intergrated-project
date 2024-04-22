@@ -519,10 +519,11 @@ foreach ($orchestraArtLimited as $s) {
 
 	<div class="goFurther">
         <div class="container">
-            <div class="width-12 title">
-                <h1>GO FURTHER</h1>
-                <img src="images/gofurther/horizrect.png">
-            </div>
+        <div class="pianoTxtandLine width-9">
+					<h1>GO <i>FURTHER...</i></h1>
+					<hr class="lineheadthin">
+					<hr class="lineheadthick">
+				</div>
 
             <div class="width-12 subtitle">
                 <h2>PIANO</h2>
@@ -536,9 +537,6 @@ foreach ($pianoArtSubset as $s) {
                 <a href="webpage.php?id=<?= $s->id ?>">
                     <div class="images">
                         <img src="images/<?= $s->img_url ?>" />
-                    </div>
-                    <div class="category">
-                        <h4><?= Category::findById($s->category_id)->name ?></h4>
                     </div>
                 </a>
             </div>
@@ -580,9 +578,6 @@ foreach ($historyArtSubset as $s) {
                 <a href="webpage.php?id=<?= $s->id ?>">
                     <div class="images">
                         <img src="images/<?= $s->img_url ?>" />
-                    </div>
-                    <div class="category">
-                        <h4><?= Category::findById($s->category_id)->name ?></h4>
                     </div>
                 </a>
             </div>
@@ -628,9 +623,6 @@ foreach ($orchestraArtSubset as $s) {
                 <a href="webpage.php?id=<?= $s->id ?>">
                     <div class="images">
                         <img src="images/<?= $s->img_url ?>" />
-                    </div>
-                    <div class="category">
-                        <h4><?= Category::findById($s->category_id)->name ?></h4>
                     </div>
                 </a>
             </div>
@@ -678,9 +670,7 @@ foreach ($operaArtSubset as $s) {
                     <div class="images">
                         <img src="images/<?= $s->img_url ?>" />
                     </div>
-                    <div class="category">
-                        <h4><?= Category::findById($s->category_id)->name ?></h4>
-                    </div>
+                    
                 </a>
 			</div>
 			<div>
@@ -706,5 +696,81 @@ foreach ($operaArtSubset as $s) {
         </div>
 
     </div>
+
+
+    <div class="footer">
+        <div class="container flex">
+            <div class="footerBlock">
+                <ul>
+                    <h3><b>LEGAL</b></h3>
+                    <li><a href="https://corporate.deliveroo.co.uk/">Terms of use</a></li>
+                    <li><a href="https://deliveroo.ie/about-us">About us</a></li>
+                    <li><a href="https://deliveroo.ie/takeaway/">Privacy Policy</a></li>
+                    <li><a href="https://deliveroo.ie/more/">Interest-Based Ads</a></li>
+                    <li><a href="https://ie.deliveroo.news/">EU Privacy Rights</a></li>
+                    <li><a href="https://deliveroo.engineering/">Cookie Policy</a></li>
+                    <li><a href="https://deliveroo.design/">Manage Privacy Preferences</a></li>
+    
+                </ul>
+            </div>
+            <div class="footerBlock">
+                <ul>
+                    <h3><b>OUR SITES</b></h3>
+                    <li><a href="https://corporate.deliveroo.co.uk/">Nat Geo Home</a></li>
+                    <li><a href="https://deliveroo.ie/about-us">Attend a Live Event</a></li>
+                    <li><a href="https://deliveroo.ie/takeaway/">Book a Trip</a></li>
+                    <li><a href="https://deliveroo.ie/more/">Buy Maps</a></li>
+                    <li><a href="https://corporate.deliveroo.co.uk/">Inspire Your Kids</a></li>
+                    <li><a href="https://deliveroo.ie/about-us">Shop Nat Geo</a></li>
+                    <li><a href="https://deliveroo.ie/takeaway/">Visit the D.C. Museum</a></li>
+                    <li><a href="https://deliveroo.ie/more/">Watch TV</a></li>
+                    <li><a href="https://corporate.deliveroo.co.uk/">Learn About Our Impact</a></li>
+                    <li><a href="https://deliveroo.ie/about-us">Support Our Mission</a></li>
+                    <li><a href="https://deliveroo.ie/takeaway/">Masthead</a></li>
+                    <li><a href="https://deliveroo.ie/more/">Press Room</a></li>
+                    <li><a href="https://deliveroo.ie/more/">Advertise With Us</a></li>
+                </ul>
+            </div>
+            <div class="footerBlock">
+                <ul>
+                    <h3><b>JOIN US</b></h3>
+                    <li><a href="https://corporate.deliveroo.co.uk/">Subscribe</a></li>
+                    <li><a href="https://deliveroo.ie/about-us">Customer Service</a></li>
+                    <li><a href="https://deliveroo.ie/takeaway/">Renew Subscription</a></li>
+                    <li><a href="https://deliveroo.ie/takeaway/">Manage your Subscription</a></li>
+                    <li><a href="https://deliveroo.ie/takeaway/">Work at Nat Geo</a></li>
+                    <li><a href="https://deliveroo.ie/takeaway/">Sign Up for Our Newsletters</a></li>
+                    <li><a href="https://deliveroo.ie/takeaway/">Contribute to Protect the Planet</a></li>
+                </ul>
+            </div>
+            <div class="footerBlock">
+                <ul>
+                    <h3><b>FOLLOW US</b></h3>
+                    <li> 
+                        <div class="socialLogos">
+                            <div class="facebook"><a class="facebookHov" href="#"><i class="fa-brands fa-square-facebook fa-2xl" ></i></a></div>
+                            <div class="twitter"><a class="twitterHov" href="#"><i class="fa-brands fa-twitter fa-2xl" ></i></a></div>
+                            <div class="instagram"><a class="instagram" href="#"> <i class="fa-brands fa-instagram fa-2xl"></i></a></div>
+                        </div>
+                     </li>
+                    <li> <div class="langChange"><img src="images/footer/USFlag.png"><p> United States (Change)</p></div></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="bottomFooter">
+        <div class="container">
+            <div class="width-12 content">
+                <img src="images/footer/footerNGLogo.png">
+                <div class="footerText">
+                    <p class="p1">Copyright &#169; 1996-2015 National Geographic Society</p>
+                    <p>Copyright &#169; 2015-2024 Copyright © 2024 BBC. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
 </html>
