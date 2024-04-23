@@ -54,7 +54,8 @@
 	top: 0;
 	left: 0;
 	transition: box-shadow 0.3s ease; /* Smooth transition for the drop shadow */
-  }
+height: 60px
+}
   
   .header-shadow {
 	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Add a drop shadow */
@@ -62,7 +63,7 @@
   
   .header h1 {
 	font-family: 'Playfair Display';
-	font-size: 40px;
+	font-size: 28px;
   }
   
   .header .title {
@@ -75,21 +76,21 @@
   }
   
   .header .logo img {
-	width: 50px;
-	height: 55px;
+	width: 35px;
+	height: 40px;
 	position: relative;
-	top: 15px;
+	top: 10px;
   }
   
   .header hr.thin1 {
-	width: 380px;
+	width: 267px;
 	margin-left: 0px;
 	position: relative;
 	bottom: 10px;
   }
   
   .header hr.thick1 {
-	width: 380px;
+	width: 267px;
 	margin-left: 0px;
 	border-top: 2px solid;
 	position: relative;
@@ -123,10 +124,6 @@
 	font-family: 'Playfair Display';
 	font-size: 38px;
 	line-height: 45px;
-}
-
-.articleBlockHead {
-	margin-top: 89px;
 }
 
 
@@ -167,3 +164,70 @@
     transform: scaleX(1);
 }
 
+.subHeader {
+	border-bottom: 1px solid;
+	font-family: 'Playfair Display';
+	text-align: center; 
+	background-color: #e4e4e4;
+}
+
+.subHeader .container{
+	padding: 0px;
+	margin-top: 60px;
+}
+
+.subHeader h1 {
+	font-weight: 300;
+	font-size: 18px;
+}
+
+.subHeader h1:hover {
+	text-decoration: underline;
+	color: #7C0D3B;
+}
+
+.subHeader 
+.categories {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0;
+  margin: 0;
+}
+
+.subHeader .categories li {
+		display: inline-block; /* Display the categories horizontally */
+		margin: 0 10px; /* Adjust spacing between categories */
+	  }
+
+.containerHead {
+	display: flex;
+    justify-content: space-between;
+}
+
+.header h2 {
+	font-family: "Playfair Display";
+	align-items: center;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.header h2:hover {
+	text-decoration: underline;
+}
+
+.options {
+	display: flex;
+	position: relative; /* Required for absolute positioning */
+	top: 15px;
+}
+
+.options img {
+	height: 20px;
+	position: relative;
+	top: 5px;
+	margin-left: 20px
+}
+
+.options img.spotify1 {
+	height: 30px;
+	top: 0px;
+}

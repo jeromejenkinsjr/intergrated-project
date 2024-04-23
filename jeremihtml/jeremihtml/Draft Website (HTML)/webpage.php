@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <?php
 require_once "./etc/config.php";
-require_once "story.php";
-require "./author.php";
+
 try {
     if ($_SERVER["REQUEST_METHOD"] !== "GET") {
         throw new Exception("Invalid request method");
@@ -37,17 +36,19 @@ catch (Exception $ex) {
 </head>
 <body>
     <div class="container">
-        <div class="story">
-            <?php if (isset($story)) : ?>
-                <h2><?= $story->headline ?></h2>
-                <p>By <?= Author::findById($story->author_id)->first_name . " " . Author::findById($story->author_id)->last_name ?></p>
-                <p><strong>Published Date:</strong> <?= $story->created_at ?></p>
-                <div class="content">
-                    <?= $story->article ?>
-                </div>
-            <?php else : ?>
-                <p>Story not found.</p>
-            <?php endif; ?>
+        <div class="width-9">
+            <div class="story">
+                <?php if (isset($story)) : ?>
+                    <h2><?= $story->headline ?></h2>
+                    <p>By <?= Author::findById($story->author_id)->first_name . " " . Author::findById($story->author_id)->last_name ?></p>
+                    <p><strong>Published Date:</strong> <?= $story->created_at ?></p>
+                    <div class="content">
+                        <?= $story->article ?>
+                    </div>
+                <?php else : ?>
+                    <p>Story not found.</p>
+             <?php endif; ?>
+            </div>
         </div>
     </div>
     <!-- Add your JavaScript and other scripts here -->

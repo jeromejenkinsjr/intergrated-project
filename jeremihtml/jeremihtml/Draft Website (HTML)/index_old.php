@@ -1,8 +1,5 @@
 <?php
-require_once "./author.php";
-require_once "./category.php";
-require_once "./location.php";
-require_once "./story.php";
+require_once "./etc/config.php";
 
 // $stories = Story::findAll($options = array('limit' => 2, 'offset' => 2));
 

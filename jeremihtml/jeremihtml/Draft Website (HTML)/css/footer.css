@@ -1,0 +1,106 @@
+.footer {
+    background-color: #303030;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+
+.socials {
+    /* Add your socials container styles here */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.socials svg {
+    /* Add your SVG styles here */
+    margin: 0 10px; /* Adjust the margin as needed */
+    fill: #e4e4e4; /* Change the fill color to white */
+
+}
+
+.facebook {
+    width: 36px;
+    height: 40px;
+}
+
+.x {
+    width: 32px;
+    height: 50px;
+}
+
+.insta {
+    width: 24px;
+    height: 35px;
+}
+
+.youtube {
+    width: 40px;
+    height: 45px;
+}
+
+.spotify {
+    width: 30px;
+    height: 30px;
+}
+
+.socials svg:hover {
+    fill: #7C0D3B;
+}
+
+.footerHeader {
+	font-family: 'Playfair Display';
+	text-align: center; 
+}
+
+.footerHeader .container{
+	padding: 0px;
+	margin-top: 60px;
+}
+
+.footerHeader h1 {
+	font-weight: 300;
+	font-size: 12px;
+    color: #e4e4e4;
+}
+
+.footerHeader h1:hover {
+	text-decoration: underline;
+	color: #7C0D3B;
+}
+
+.footerHeader 
+.footerTitle {
+  list-style-type: none; /* Remove default list styles */
+  padding: 0;
+  margin: 0;
+}
+
+.footerHeader .footerTitle li {
+		display: inline-block; /* Display the categories horizontally */
+		margin: 0 10px; /* Adjust spacing between categories */
+	  }
+
+.bottomFooter {
+    background-color: #222222;
+    color: white;
+}
+
+.bottomFooter .container {
+    padding: 5px;
+}
+
+.footerText {
+    font-family: 'Libre Franklin';
+    font-size: 11px;
+    text-align: center;
+    line-height: 1.5; /* Optional: adjust line height for better appearance */
+}
+
+.bottomFooter p {
+    font-size: 9px;
+}

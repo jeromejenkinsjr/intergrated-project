@@ -31,22 +31,18 @@
     font-size: 48px;
 }
 
-.goFurther h2 {
-    font-family: centuryGothicBold;
-    letter-spacing: 3px;
-
-    margin-top: 60px;
-    margin-bottom: 20px;
-    text-align: center;
+.goFurther h4 {
+    padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    background-color: #7C0D3B;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    font-family: 'Lato';
 }
 
-.goFurther h3 {
-    font-family: centuryGothic;
-    letter-spacing: 3px;
-    font-size: 12px;
-    margin-top: 10px;
-        margin-bottom: 10px;
-    }
+
 
     .goFurther .images {
         position: relative;
@@ -64,12 +60,14 @@
     .goFurther p {
         margin-left: 0px;
         font-family: "Libre Franklin";
-
+        font-size: 11px;
+        font-weight: 200;
     }
 
-    .goFurther .lineheadthick {
+    .goFurther .panel hr.lineheadthick {
         border-top: 2px solid;
     }
+  
     
     .goFurther .authoranddate {
         display: flex;
@@ -81,4 +79,20 @@
         font-family: "Libre Franklin";
         font-size: 12px;
         font-weight: 200;
+    }
+
+    .goFurther .container {
+        padding-bottom: 0px;
+    }
+
+    .goFurther h5 {
+        margin: 0px;
+        font-size: 22px;
+        font-family: "Playfair Display";
+        font-weight: 300;
+        line-height: 1.2;
+    }
+
+    .goFurther h5:hover {
+       text-decoration: underline;
     }

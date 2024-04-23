@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         function restartAutoScroll() {
           stopAutoScroll();
           setTimeout(startAutoScroll, 3000); // Restart auto-scroll after 3 seconds
-        }
+      }
   
         nextBtn.addEventListener('click', function() {
           nextSlide();

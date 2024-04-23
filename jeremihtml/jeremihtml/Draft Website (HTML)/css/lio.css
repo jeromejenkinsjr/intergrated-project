@@ -29,7 +29,8 @@
 	padding-right: 15px;
 	position: relative;
 	background-color: #7C0D3B;
-	display: inline-block; /* Add this line */
+	display: inline-block; 
+	text-transform: uppercase;
 }
 
 .latestInOrchestra .lineheadthick {
