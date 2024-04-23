@@ -42,17 +42,18 @@
 }
 
 .editorsChoice .category {
-	width: 100px;
-	background-color: #7C0D3B;
-	font-family: "Lato";
-	margin-bottom: 8px;
+	padding-left: 15px;
+    padding-right: 15px;
+    position: relative;
+    background-color: #7C0D3B;
+    display: inline-block;
+    text-transform: uppercase;
+    color: white;
+    font-family: "Lato";
+
 }
 
-.editorsChoice .category h4 {
-	position: relative;
-	left: 25px;
-    color: white;
-}
+
 
 .editorsChoice .horArticle p {
     margin-top: 8px;

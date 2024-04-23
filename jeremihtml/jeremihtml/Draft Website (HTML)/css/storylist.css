@@ -1,0 +1,10 @@
+.story-list {
+    margin: 0 auto; /* This will center the div horizontally */
+    max-width: 800px; /* Adjust the max-width as needed */
+    padding: 20px; /* Add some padding if needed */
+}
+
+.story {
+    border: 2px solid #ddd; /* Add a border with 2px width and gray color */
+    padding: 5px;
+}

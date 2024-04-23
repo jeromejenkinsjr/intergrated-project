@@ -94,39 +94,36 @@ $ecArt = Story::findByCategory($ecCategoryId);
 
 
 	
+	
+	<!-- Medium Arcticles -->
 	<section class="articleBlockHead">
 		<div class="container">
-            <?php
-            -usort($ecArt, 'sortByCreatedAtDesc');
+        <?php
+// Sort the array of articles by creation date in descending order
+usort($ecArt, 'sortByCreatedAtDesc');
 
-$firstStory = array_slice($ecArt, 1, 1);
+// Get the first story from the ecArt array
+$mainStory = array_slice($ecArt, 0, 1);
+
+foreach ($mainStory as $s) {
+    ?>
+    <div class="panel width-6">
+        <div>
+    <img class="mainStoryImage" src="images/<?= $s->img_url ?>" />
+        <h1><?= $s->headline ?></h1>
+</div>
+<div>
+        <hr class="lineheadthin">
+        <div class="authoranddate">
+            <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+            <p><?= $s->created_at ?></p>
+        </div>
+        <hr class="lineheadthick">
+    </div>
+</div>
+    <?php
+}
 ?>
-           <?php foreach ($mainStory as $s) {
-    if ($s->category_id === $ecCategoryId) { 
-        $headline = $s->headline;
-        if (strlen($headline) > 63) {
-            // Find the position of the last space within the substring of the headline
-            $last_space = strrpos(substr($headline, 0, 50), ' ');
-            if ($last_space !== false) {
-                $headline = substr($headline, 0, $last_space) . '...'; // Truncate at the last space
-            } else {
-                $headline = substr($headline, 0, 50) . '...'; // Truncate at character limit if no space found
-            }
-        }
-    }
-        ?>
-			<div class="panel width-6">
-				<img src="images/<?= $s->img_url ?>" />
-				<h1><?= $headline ?></h1>
-				<hr class="lineheadthin">
-				<div class="authoranddate">
-                <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
-                <p><?= $s->created_at ?></p>
-				</div>
-				<hr class="lineheadthick">
-			</div>
-
-
 
 
 			<div class="carouselSect width-6">
@@ -401,7 +398,7 @@ foreach ($firstStory as $s) {
             <h2><?= $headline ?></h2>
         </div>
         <div>
-            <p><?= substr($s->article, 0, 200) ?>...</p>
+            <p><?= substr($s->article, 0, 400) ?>...</p>
             <hr class="lineheadthin">
             <div class="authoranddate">
                 <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>

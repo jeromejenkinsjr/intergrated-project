@@ -231,3 +231,15 @@ height: 60px
 	height: 30px;
 	top: 0px;
 }
+
+.articleBlockHead img.mainStoryImage {
+	width: 625px;
+	height: 392px;
+	object-fit: cover;
+}
+
+.articleBlockHead .panel {
+	display: flex;
+	flex-direction: column;
+justify-content: space-between;	
+}

@@ -1,0 +1,52 @@
+<div class="story-list">
+    <?php 
+    // Assuming you have fetched the stories for each category
+    $categories = [1, 2, 3, 4, 5]; // Example array of category IDs
+    foreach ($categories as $categoryId):
+        $stories = Story::findByCategory($categoryId); // Fetch stories for the current category
+        foreach ($stories as $s):
+            $headline = $s->headline;
+            if (strlen($headline) > 50) {
+                // Find the position of the last space within the substring of the headline
+                $last_space = strrpos(substr($headline, 0, 50), ' ');
+                if ($last_space !== false) {
+                    $headline = substr($headline, 0, $last_space) . '...'; // Truncate at the last space
+                } else {
+                    $headline = substr($headline, 0, 50) . '...'; // Truncate at character limit if no space found
+                }
+            }
+            ?>
+            <div class="story">
+                <div class="mainPart width-6">
+                    <div>
+                        <div class="category">
+                            <h4><?= Category::findById($s->category_id)->name ?></h4>
+                        </div>
+                        <h2><?= $headline ?></h2>
+                    </div>
+                    <div>
+                        <p><?= substr($s->article, 0, 400) ?>...</p>
+                        <hr class="lineheadthin">
+                        <div class="authoranddate">
+                            <p><?= Author::findById($s->author_id)->first_name . " " . Author::findById($s->author_id)->last_name ?></p>
+                            <p><?= $s->created_at ?></p>
+                        </div>
+                        <hr class="lineheadthick">
+                    </div>
+                </div>
+                <div class="image width-6">
+                    <img src="images/<?= $s->img_url ?>" />
+                </div>
+            </div>
+        <?php endforeach; ?>
+    <?php endforeach; ?>
+</div>
+
+<div class="story-list">
+    <?php foreach ($stories as $story): ?>
+    <div class="story">
+        <h2><?= htmlspecialchars($story->headline) ?></h2>
+        <p><?= htmlspecialchars($story->article) ?></p>
+    </div>
+<?php endforeach; ?>
+    </div>
