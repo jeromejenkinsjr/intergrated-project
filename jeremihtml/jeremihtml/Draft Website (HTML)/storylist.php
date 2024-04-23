@@ -56,18 +56,19 @@ try {
 <section class="header">
 		<div class="containerHead">
 			<div class="width-6">
-				<div class="title">
-					<div class="titandlin">
-						<h1>Maison du Classique</h1>
-						<div class="lines">
-							<hr class="thin1">
-							<hr class="thick1">
-						</div>
-					</div>
-					<div class="logo">
-						<img src="images/logo.png" alt="Logo">
-					</div>
-				</div>
+            <a href="index.php" class="title">
+    <div class="titandlin">
+        <h1>Maison du Classique</h1>
+        <div class="lines">
+            <hr class="thin1">
+            <hr class="thick1">
+        </div>
+    </div>
+    <div class="logo">
+        <img src="images/logo.png" alt="Logo">
+    </div>
+</a>
+
 			</div>
             <div class="width-6">
                 <div class="options">
@@ -80,18 +81,18 @@ try {
 	</section>
 
     <section class="subHeader">
-		<div class="container">
-			<div class="width-12">
+    <div class="container">
+        <div class="width-12">
             <ul class="categories">
-    <li><h1>Piano</h1></li>
-    <li><h1>Orchestra</h1></li>
-    <li><h1>Opera</h1></li>
-    <li><h1>History</h1></li>
-    <li><h1>Editor's Choice</h1></li>
-  </ul>
-			</div>
-		</div>
-	</section>
+                <li><a href="storylist.php?category_id=1"><h1>Piano</h1></a></li>
+                <li><a href="storylist.php?category_id=2"><h1>Orchestra</h1></a></li>
+                <li><a href="storylist.php?category_id=5"><h1>Opera</h1></a></li>
+                <li><a href="storylist.php?category_id=4"><h1>History</h1></a></li>
+                <li><a href="storylist.php?category_id=3"><h1>Editor's Choice</h1></a></li>
+            </ul>
+        </div>
+    </div>
+</section>
 
     <div class="story-list">
     <?php foreach ($stories as $story):

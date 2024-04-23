@@ -41,6 +41,11 @@
 	margin-bottom: 5px;
 }
 
+.horArticle h2:hover {
+    text-decoration: underline;
+
+}
+
 .editorsChoice .category {
 	padding-left: 15px;
     padding-right: 15px;
@@ -50,10 +55,13 @@
     text-transform: uppercase;
     color: white;
     font-family: "Lato";
-
+    margin-bottom: 8px;
 }
 
 
+.editorsChoice .category h4:hover{
+	text-decoration: underline;
+}
 
 .editorsChoice .horArticle p {
     margin-top: 8px;

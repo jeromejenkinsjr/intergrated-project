@@ -101,6 +101,6 @@
     line-height: 1.5; /* Optional: adjust line height for better appearance */
 }
 
-.bottomFooter p {
+.bottomFooter .footerText p {
     font-size: 9px;
 }

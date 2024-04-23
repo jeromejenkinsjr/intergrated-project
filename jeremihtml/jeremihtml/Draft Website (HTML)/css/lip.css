@@ -17,6 +17,14 @@
 	margin-bottom: 5px;
 }
 
+.latestInPiano h2:hover {
+	text-decoration: underline;
+}
+
+.latestInOrchestra h2:hover {
+	text-decoration: underline;
+}
+
 .latestInPiano .category {
     font-family: "Lato";
     margin-bottom: 8px;
@@ -30,6 +38,14 @@
     background-color: #7C0D3B;
     display: inline-block;
     text-transform: uppercase;
+  }
+
+  .latestInPiano .category h4:hover {
+    text-decoration: underline;
+  }
+
+  .latestInOrchestra .category h4:hover {
+    text-decoration: underline;
   }
 
 .latestInPiano .lineheadthick {

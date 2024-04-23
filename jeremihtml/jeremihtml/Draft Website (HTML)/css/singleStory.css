@@ -1,0 +1,48 @@
+.singleStory h1 {
+    font-family: 'Playfair Display';
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.singleStory img {
+    height: 460px;
+    width: 770px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+    border: 2px solid #ddd;
+}
+
+.singleStory {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+}
+
+.singleStory .authoranddate {
+	display: flex;
+	justify-content: space-between;
+    padding: 0px 92px 0px 92px;
+}
+
+.singleStory .lineheadthin {
+    border: none; /* Remove default borders */
+    height: 1px; /* Set the height */
+    background-color: black; /* Set the color */
+    margin: 10px 91px; /* Adjust margin as needed */
+    width: 80.8%; /* Set the width to 100% */
+}
+
+.singleStory .lineheadthick {
+    border: none; /* Remove default borders */
+    height: 2px; /* Set the height */
+    background-color: black; /* Set the color */
+    margin: 10px 91px; /* Adjust margin as needed */
+    width: 80.8%; /* Set the width to 100% */
+}
+
+.content p {
+    font-family: 'Libre Franklin';
+    font-size: 19px;
+    font-weight: 200;
+    margin-top: 10px;
+}

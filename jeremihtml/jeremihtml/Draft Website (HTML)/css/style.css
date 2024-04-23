@@ -243,3 +243,11 @@ height: 60px
 	flex-direction: column;
 justify-content: space-between;	
 }
+
+svg.homeIcon {
+	position: relative;
+	fill: white;
+	height: 20px;
+	left: 20px;
+	top: 3px;
+}

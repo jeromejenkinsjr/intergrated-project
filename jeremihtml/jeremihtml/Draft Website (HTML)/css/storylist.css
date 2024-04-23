@@ -6,5 +6,27 @@
 
 .story {
     border: 2px solid #ddd; /* Add a border with 2px width and gray color */
-    padding: 5px;
+    padding: 15px;
+    margin-bottom: 15px;
+}
+
+.story h2 {
+    font-family: "Playfair Display";
+	font-weight: 300;
+	font-size: 28px;
+	line-height: 32px;
+	margin-bottom: 5px;
+}
+
+.story p {
+    margin-top: 8px;
+    font-family: "Libre Franklin";
+    font-size: 11px;
+    font-weight: 200;
+}
+
+.story img {
+    width: 297.5px;
+    height: 255.37px;
+    object-fit: cover;
 }
